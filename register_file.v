@@ -2,38 +2,73 @@
 `include "constant_values.h"
 
 module register_file(read_reg1, read_reg2, write_reg, write_data,
-                        regWrite, regDst, read_data1, read_data2 , clk);
+                        reg_write, read_data1, read_data2 , clk);
 
-    input [4:0] read_reg1, read_reg2 , write_reg;
+    input [4:0] read_reg1, read_reg2, write_reg;
     input [31:0] write_data;
     output reg [31:0] read_data1 , read_data2;
-    input regWrite , regDst;
+    input reg_write;
     input clk;
 
     reg [31:0] registers [31:0];
 
-    //reading registers from file
-    //initial begin
-	//	$readmemb("registers.txt", registers);
-	//end
+    // reading registers from file
+    initial begin
+		$readmemb("registers.txt", registers);
+	end
 
-    always @(read_reg1, read_reg2) begin
+    always @(read_reg1 or read_reg2) begin
 		read_data1 = registers[read_reg1];
 		read_data2 = registers[read_reg2];
 	end
 
+    // assign read_data1 = registers[read_reg1];
+    // assign read_data2 = registers[read_reg2];
+
     always @(posedge clk) begin
-        if(regWrite) begin
-            if(regDst) begin
-				registers[write_reg] = write_data;
-			end
-			else begin
-                registers[read_reg2] = write_data;
-			end
-        end
+        if(reg_write == 1'b1)
+            registers[write_reg] <= write_data;
     end
 
-    //writing to registers after operations finished
-    //$writememb("registers.mem",registers);
-            
+    // writing to registers after operations finished
+    // initial begin
+        // $writememb("registers.mem",registers);
+    // end
+
+endmodule
+
+module reg_file_test();
+    reg [4:0] read_reg1, read_reg2 , write_reg;
+    reg [31:0] write_data;
+    wire [31:0] read_data1 , read_data2;
+    reg reg_write;
+    reg clk;
+
+    register_file reg_file_test(read_reg1, read_reg2, write_reg, write_data,
+                        reg_write, read_data1, read_data2 , clk);
+    
+    initial begin
+        clk = 1'b1;
+        repeat(200) #50 clk = ~clk;
+    end
+
+    initial begin
+        read_reg1 = 5'b00000;
+        read_reg2 = 5'b00000;
+        write_reg = 5'b00001;
+        write_data = 32'b0000000000000000_1111111111111111;
+        reg_write = 1'b1;
+        #100 reg_write = 1'b0;
+        #1000 read_reg1 = 5'b00001;
+        #1000 write_reg = 5'b11110;
+        write_data = 32'b1111111111111111_0000000000000000;
+        reg_write = 1'b1;
+        #500 reg_write = 1'b0;
+        write_data = `WORD_ZERO;
+        read_reg2 = 5'b11110;
+        #1000 read_reg1 = 5'b11110;
+        #1000 read_reg2 = 5'b00001;
+        #1000;
+    end
+
 endmodule
