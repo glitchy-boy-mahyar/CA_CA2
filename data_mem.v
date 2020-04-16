@@ -12,6 +12,13 @@ module data_mem(address, write_data, read_data,
 	
 	reg [31:0] mem[0:2 ** 16];
 	
+	// uncommenting the following lines would
+	// load the memory with some initial values
+	// from the given directory
+	/*initial begin
+		$readmemb("test_1.txt", mem);
+	end*/
+	
 	always @(posedge clk) begin
 		if (mem_write == 1'b1)
 			mem[address[15:0]] = write_data;
@@ -23,14 +30,10 @@ module data_mem(address, write_data, read_data,
 		else
 			read_data = `WORD_ZERO;
 	end
-	
-	// uncommenting the following lines would
-	// load the memory with some initial values
-	// from the given directory
+	//following line is to save the memory data to txt file
+	//$writememb("test_1.txt", mem);
 
-	initial begin
-		$readmemb("test_1.txt", mem);
-	end
+	
 endmodule
 
 module data_mem_test();
