@@ -1,12 +1,16 @@
 `timescale 1 ns / 1 ns
 `include "constant_values.h"
-module pc(in, out, clk);
+module pc(in, out, clk , rst);
     input [31:0] in;
     output reg [31:0] out = `WORD_ZERO;
-    input clk;
+    input clk , rst;
 
-    always @(posedge clk)
+    always @(posedge clk or posedge rst)begin
+        if(rst)begin
+            out <= 32'b0000000000000000_0000000000000000;
+        end
         out <= in;
+    end
 
 endmodule
 
