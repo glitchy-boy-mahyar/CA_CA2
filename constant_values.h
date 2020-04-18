@@ -5,8 +5,9 @@
 `define __CONST_H__
 
 `define WORD_ZERO 32'b0000000000000000_0000000000000000
-`define AND 2'b00
-`define OR 2'b01
-`define ADD 2'b10
-`define SUB 2'b11
+`define AND 3'b000
+`define OR 3'b001
+`define ADD 3'b010
+`define SUB 3'b011
+`define SLT 3'b100
 `endif

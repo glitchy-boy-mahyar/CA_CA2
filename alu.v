@@ -5,7 +5,7 @@ module alu(a, b, y, zero, alu_ctrl);
     input [31:0] b;
     output reg [31:0] y;
     output reg zero;
-    input [1:0] alu_ctrl;
+    input [2:0] alu_ctrl;
 
     always @(alu_ctrl, a, b) begin
         case (alu_ctrl)
@@ -13,6 +13,16 @@ module alu(a, b, y, zero, alu_ctrl);
             `OR: y = a | b;
             `ADD: y = a + b;
             `SUB: y = a - b;
+            `SLT: begin
+                if (a[31] == 1'b1 && b[31] == 1'b1)
+                    y = a < b;
+                else if (a[31] == 1'b0 && b[31] == 1'b1)
+                    y = {31'b0, 1'b1};
+                else if (a[31] == 1'b1 && b[31] == 1'b0)
+                    y = 32'b0;
+                else if (a[31] == 1'b0 && b[31] == 1'b0)
+                    y = a < b; 
+            end
         endcase
     end
 
@@ -28,11 +38,7 @@ module alu_test();
     reg [31:0] b;
     wire [31:0] y;
     wire zero;
-    reg [1:0] alu_ctrl;
-    parameter [1:0] AND = 2'b00;
-    parameter [1:0] OR = 2'b01;
-    parameter [1:0] ADD = 2'b10;
-    parameter [1:0] SUB = 2'b11;
+    reg [2:0] alu_ctrl;
 
     alu alu_test(a, b, y, zero, alu_ctrl);
 
@@ -45,6 +51,12 @@ module alu_test();
     #500 alu_ctrl = `ADD;
     #500 alu_ctrl = `AND;
     #500 alu_ctrl = `OR;
+    #500 alu_ctrl = `SLT;
+    #500 b = 32'b1111111111111111_1111111111111111;
+    #500 a = 32'b1111111111111111_1111111111111101;
+    b = 32'b1111111111111111_1111111111111011;
+    #500 a = 32'b1111111111111111_1111111111111011;
+    b = 32'b1111111111111111_1111111111111101;
     #1000;
     end
 
