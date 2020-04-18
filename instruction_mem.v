@@ -8,5 +8,6 @@ module instruction_mem(address, instruction);
     
     always @(address) begin
         instruction = mem[address];
+        $display("@%t: INST_MEM: data at address %d is read", $time, address);
     end
 endmodule

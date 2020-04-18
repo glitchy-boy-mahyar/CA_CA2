@@ -20,14 +20,17 @@ module register_file(read_reg1, read_reg2, write_reg, write_data,
     always @(read_reg1 or read_reg2) begin
 		read_data1 = registers[read_reg1];
 		read_data2 = registers[read_reg2];
+        $display("@%t: REG_FILE::READ: registers %d, %d are read", $time, read_reg1, read_reg2);
 	end
 
     // assign read_data1 = registers[read_reg1];
     // assign read_data2 = registers[read_reg2];
 
     always @(posedge clk) begin
-        if(reg_write == 1'b1)
+        if(reg_write == 1'b1) begin
             registers[write_reg] <= write_data;
+            $display("@%t: REG_FILE::WRITE: value %d stored in register %d", $time, write_data, write_reg);
+        end
     end
 
     // writing to registers after operations finished

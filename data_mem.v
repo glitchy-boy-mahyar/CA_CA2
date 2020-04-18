@@ -20,13 +20,17 @@ module data_mem(address, write_data, read_data,
 	end
 	
 	always @(posedge clk) begin
-		if (mem_write == 1'b1)
+		if (mem_write == 1'b1) begin
 			mem[address[15:0]] <= write_data;
+			$display("@%t: DATA_MEM::WRITE: value %d stored at address %d", $time, write_data, address[15:0]);
+		end
 	end
 
 	always @(mem_read or address) begin
-		if (mem_read == 1'b1)
+		if (mem_read == 1'b1) begin
 			read_data = mem[address[15:0]];
+			$display("@%t: DATA_MEM::READ: value %d at address %d is read", $time, mem[address[15:0]], address[15:0]);
+		end
 		else
 			read_data = `WORD_ZERO;
 	end
