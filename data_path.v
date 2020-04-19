@@ -37,6 +37,4 @@ module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
     mux_32bit mux_pc_jump(mux_pc_src_out , mux_jump_sel_out , mux_pc_jump_out , pc_jump);
     mux_32bit mux_pc_src(adder_pc_plus_4_out , adder_beq_out , mux_pc_src_out , pc_src);
 
-
-
 endmodule
