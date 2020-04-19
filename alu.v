@@ -23,6 +23,7 @@ module alu(a, b, y, zero, alu_ctrl);
                 else if (a[31] == 1'b0 && b[31] == 1'b0)
                     y = a < b; 
             end
+            `OFF: y = `WORD_Z;
         endcase
     end
 
