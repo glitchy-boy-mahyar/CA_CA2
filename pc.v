@@ -2,17 +2,17 @@
 `include "constant_values.h"
 module pc(in, out, clk , rst);
     input [31:0] in;
-    output reg [31:0] out = `WORD_ZERO;
+    output reg [31:0] out;
     input clk , rst;
 
-    always @(posedge clk or posedge rst)begin
-        if(rst == 1'b1) begin
+    always @(posedge clk or posedge rst) begin
+        if (rst == 1'b1) begin
             out <= `WORD_ZERO;
             $display("@%t: PC::RESET; PC is now %d", $time, out);
         end
         else begin
             out <= in;
-            $display("@%t: PC is now %d", $time, in, out);
+            $display("@%t: PC is now %d", $time, out);
         end
     end
 

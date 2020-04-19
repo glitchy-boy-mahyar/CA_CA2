@@ -32,7 +32,7 @@ module data_mem(address, write_data, read_data,
 			$display("@%t: DATA_MEM::READ: value %d at address %d is read", $time, mem[address[15:0]], address[15:0]);
 		end
 		else
-			read_data = `WORD_ZERO;
+			read_data = `Z;
 	end
 
 	// assign read_data = (mem_read == 1'b1) ? mem[address[15:0]] : `WORD_ZERO;

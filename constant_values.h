@@ -5,6 +5,7 @@
 `define __CONST_H__
 
 `define WORD_ZERO 32'b0000000000000000_0000000000000000
+`define Z 32'bzzzzzzzzzzzzzzzz_zzzzzzzzzzzzzzzz
 `define THIRTY_ONE 5'b11111
 `define FOUR 32'b0000000000000000_0000000000000100
 `define AND 3'b000

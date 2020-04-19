@@ -58,26 +58,26 @@ module data_path_test();
             jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO);
 
 	initial begin
-		rst = 1'b1;
-		#50 rst = 1'b0;
-		#50 clk = 1'b1;
+        #100 clk = 1'b1;
 		repeat(200) #50 clk = ~clk;
 	end
 
 	initial begin
-		#90 reg_dst = 1'b0;
+        #100 rst = 1'b1;
+        pc_jump = 1'b0;
+		pc_src = 1'b0;
+        reg_dst = 1'b0;
 		jal_reg = 1'b0;
+		alu_cntrl = `ADD;
+		mem_to_reg = 1'b1;
 		pc_to_reg = 1'b0;
 		alu_src = 1'b1;
-		mem_to_reg = 1'b1;
         jump_sel = 1'b0;
-		pc_jump = 1'b0;
-		pc_src = 1'b0;
 		reg_write = 1'b1;
 		mem_read = 1'b1;
 		mem_write = 1'b0;
-		alu_cntrl = `ADD;
-		#150;
+        #50 rst = 1'b0;
+        #150;
 		$stop;
 	end
 endmodule
