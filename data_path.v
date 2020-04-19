@@ -2,7 +2,7 @@
 `timescale 1 ns/1 ns
 module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
             jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO);
-    output reg ZERO;
+    output ZERO;
     input clk , rst;
     
     //control signals
@@ -28,15 +28,51 @@ module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
     adder adder_2(adder_1_out , shifter_1_out , adder_2_out);
     shift_left_2 sfl1(sign_ext_out , shifter_1_out);
     shifter_for_jump sfl2(instructs , pc_out , shifter_2_out);
-    mux_5bit mux_reg_dst(instructs[20:16] , instructs[15:11] , mux1 , reg_dst);
-    mux_5bit mux_jal_reg(mux1 , `THIRTY_ONE , mux2 , jal_reg);
-    mux_32bit mux_pc_to_reg(mux5 , adder_1_out , mux3 , pc_to_reg);
-    mux_32bit mux_alu_src(read_data_2 , sign_ext_out , mux4 , alu_src);
-    mux_32bit mux_mem_to_reg(alu_result , read_data , mux5 , mem_to_reg);
-    mux_32bit mux_jump_sel(read_data_1 , shifter_2_out, mux6 , jump_sel);
-    mux_32bit mux_pc_jump(mux8 , mux6 , mux7 , pc_jump);
-    mux_32bit mux_pc_src(adder_1_out , adder_2_out , mux8 , pc_src);
+    mux_5_bit mux_reg_dst(instructs[20:16] , instructs[15:11] , mux1 , reg_dst);
+    mux_5_bit mux_jal_reg(mux1 , `THIRTY_ONE , mux2 , jal_reg);
+    mux_32_bit mux_pc_to_reg(mux5 , adder_1_out , mux3 , pc_to_reg);
+    mux_32_bit mux_alu_src(read_data_2 , sign_ext_out , mux4 , alu_src);
+    mux_32_bit mux_mem_to_reg(alu_result , read_data , mux5 , mem_to_reg);
+    mux_32_bit mux_jump_sel(read_data_1 , shifter_2_out, mux6 , jump_sel);
+    mux_32_bit mux_pc_jump(mux8 , mux6 , mux7 , pc_jump);
+    mux_32_bit mux_pc_src(adder_1_out , adder_2_out , mux8 , pc_src);
 
 
 
 endmodule
+
+module data_path_test();
+    wire ZERO;
+    reg clk , rst;
+    reg reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
+            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write;
+	reg [2:0] alu_cntrl;
+	data_path data_path_test(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
+            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO);
+
+	initial begin
+		rst = 1'b1;
+		#100 rst = 1'b0;
+		clk = 1'b1;
+		repeat(200) #50 clk = ~clk;
+	end
+
+	initial begin
+		#100 reg_dst = 1'b0;
+		jal_reg = 1'b0;
+		pc_to_reg = 1'b0; 
+		alu_src = 1'b1;
+		mem_to_reg = 1'b1;
+        jump_sel = 1'b0;
+		pc_jump = 1'b0;
+		pc_src = 1'b0;
+		reg_write = 1'b1;
+		mem_read = 1'b1;
+		mem_write = 1'b0;
+		alu_cntrl = `ADD;
+		#150;
+		$stop;
+	end
+
+endmodule
+

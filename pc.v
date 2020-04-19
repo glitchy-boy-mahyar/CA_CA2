@@ -7,7 +7,7 @@ module pc(in, out, clk , rst);
 
     always @(posedge clk or posedge rst)begin
         if(rst)begin
-            out <= 32'b0000000000000000_0000000000000000;
+            out <= `WORD_ZERO;
         end
         out <= in;
     end
