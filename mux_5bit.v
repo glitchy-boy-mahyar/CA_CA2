@@ -6,7 +6,7 @@ module mux_5_bit(in_0, in_1, out, select);
     always @(in_0, in_1, select) begin
         if (select == 1'b0)
             out = in_0;
-        else
+        else if (select == 1'b1)
             out = in_1;
     end
 endmodule

@@ -23,9 +23,6 @@ module register_file(read_reg1, read_reg2, write_reg, write_data,
         $display("@%t: REG_FILE::READ: registers %d, %d are read", $time, read_reg1, read_reg2);
 	end
 
-    // assign read_data1 = registers[read_reg1];
-    // assign read_data2 = registers[read_reg2];
-
     always @(posedge clk) begin
         if(reg_write == 1'b1) begin
             registers[write_reg] <= write_data;

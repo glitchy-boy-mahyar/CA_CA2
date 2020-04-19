@@ -6,10 +6,14 @@ module pc(in, out, clk , rst);
     input clk , rst;
 
     always @(posedge clk or posedge rst)begin
-        if(rst)begin
+        if(rst == 1'b1) begin
             out <= `WORD_ZERO;
+            $display("@%t: PC::RESET; PC is now %d", $time, out);
         end
-        out <= in;
+        else begin
+            out <= in;
+            $display("@%t: PC is now %d", $time, in, out);
+        end
     end
 
 endmodule
@@ -17,9 +21,9 @@ endmodule
 module pc_test();
     reg [31:0] in;
     wire [31:0] out;
-    reg clk;
+    reg clk, rst;
 
-    pc pc_test(in, out, clk);
+    pc pc_test(in, out, clk, rst);
 
     initial begin
         clk = 1'b1;
@@ -27,7 +31,9 @@ module pc_test();
     end
 
     initial begin
-        #450 in = 32'b0000111100001111_0000111100001111;
+        rst = 1'b1;
+        #450 rst = 1'b0;
+        in = 32'b0000111100001111_0000111100001111;
         #400 in = 32'b0101010101010101_0101010101010101;
         #850 in = 32'b0110011001100110_0110011001100110;
         #1000; 

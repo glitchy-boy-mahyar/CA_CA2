@@ -10,4 +10,8 @@ module instruction_mem(address, instruction);
         instruction = mem[address];
         $display("@%t: INST_MEM: data at address %d is read", $time, address);
     end
+
+    initial begin
+        $readmemb("inst_mem.txt", mem);
+    end
 endmodule
