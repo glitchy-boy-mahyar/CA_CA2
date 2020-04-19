@@ -1,3 +1,6 @@
+`timescale 1 ns / 1 ns
+`include "constant_values.h"
+
 module alu_controller(alu_op , func , alu_operation);
     input [1:0] alu_op;
     input [5:0] func;
@@ -8,7 +11,7 @@ module alu_controller(alu_op , func , alu_operation);
     parameter RTYPE = 2'b10; // Register
 
     parameter ADD = 6'b100000;
-    parameter SUb = 6'b100010;
+    parameter SUB = 6'b100010;
     parameter AND = 6'b100100;
     parameter OR = 6'b100101;
     parameter SLT = 6'b101010;
@@ -45,9 +48,9 @@ module alu_controller(alu_op , func , alu_operation);
                         alu_operation = `SLT;
                     end
 
-                    default : break // it is for jr instruct because jr opcode is 0000000 and func is 001000
+                    default : break; // it is for jr instruct because jr opcode is 0000000 and func is 001000
                 endcase
             end
         endcase
-
+    end
 endmodule
