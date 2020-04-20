@@ -4,7 +4,7 @@ module controller(ZERO , opcode , func , reg_dst , jal_reg , pc_to_reg , alu_src
     input [5:0] opcode , func;
     output reg reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
                 jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write;
-    output reg [2:0] alu_operation;
+    output [2:0] alu_operation;
 
     //alu_op parameters
     parameter MTYPE = 2'b00; // Memorey accses
@@ -55,155 +55,158 @@ module controller(ZERO , opcode , func , reg_dst , jal_reg , pc_to_reg , alu_src
     end
 
     always @(opcode or functions or ZERO or branch)begin
+        {reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
+                jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write} = 11'b0;
+        alu_op = 2'bzz;
         case(opcode)
             REGISTER_TYPE: begin
                 if(functions != JR)begin
                     reg_dst = 1'b1;
-                    jal_reg = 1'b0;
-                    pc_to_reg = 1'b0;
-                    alu_src = 1'b0;
-                    mem_to_reg = 1'b0;
-                    jump_sel = 1'b0; // it can be X.
-                    pc_jump = 1'b0;
+                    // jal_reg = 1'b0;
+                    // pc_to_reg = 1'b0;
+                    // alu_src = 1'b0;
+                    // mem_to_reg = 1'b0;
+                    // jump_sel = 1'b0; // it can be X.
+                    // pc_jump = 1'b0;
                     pc_src = ZERO & branch;
                     reg_write = 1'b1;
-                    mem_read = 1'b0;
-                    mem_write = 1'b0;
+                    // mem_read = 1'b0;
+                    // mem_write = 1'b0;
                     alu_op = RTYPE;
                 end
                 else if(functions == JR)begin
-                    reg_dst = 1'b0; // it can be X.
-                    jal_reg = 1'b0; // it can be X.
-                    pc_to_reg = 1'b0; // it can be X.
-                    alu_src = 1'b0; // it can be X.
-                    mem_to_reg = 1'b0; // it can be X.
-                    jump_sel = 1'b0; 
+                    // reg_dst = 1'b0; // it can be X.
+                    // jal_reg = 1'b0; // it can be X.
+                    // pc_to_reg = 1'b0; // it can be X.
+                    // alu_src = 1'b0; // it can be X.
+                    // mem_to_reg = 1'b0; // it can be X.
+                    // jump_sel = 1'b0; 
                     pc_jump = 1'b1;
-                    pc_src = ZERO & branch; // it can be X.
-                    reg_write = 1'b0;
-                    mem_read = 1'b0;
-                    mem_write = 1'b0;
+                    // pc_src = ZERO & branch; // it can be X.
+                    // reg_write = 1'b0;
+                    // mem_read = 1'b0;
+                    // mem_write = 1'b0;
                     alu_op = JTYPE;
                 end
             end
 
             SW: begin
-                reg_dst = 1'b0; // it can be X.
-                jal_reg = 1'b0; // it can be X.
-                pc_to_reg = 1'b0; // it can be X.
+                // reg_dst = 1'b0; // it can be X.
+                // jal_reg = 1'b0; // it can be X.
+                // pc_to_reg = 1'b0; // it can be X.
                 alu_src = 1'b1;
-                mem_to_reg = 1'b0; //it can be X.
-                jump_sel = 1'b0; // it can be X.
-                pc_jump = 1'b0;
+                // mem_to_reg = 1'b0; //it can be X.
+                // jump_sel = 1'b0; // it can be X.
+                // pc_jump = 1'b0;
                 pc_src = ZERO & branch;
-                reg_write = 1'b0;
-                mem_read = 1'b0;
+                // reg_write = 1'b0;
+                // mem_read = 1'b0;
                 mem_write = 1'b1;
                 alu_op = MTYPE;
             end
 
             LW: begin
-                reg_dst = 1'b0; 
-                jal_reg = 1'b0; 
-                pc_to_reg = 1'b0; 
+                // reg_dst = 1'b0; 
+                // jal_reg = 1'b0; 
+                // pc_to_reg = 1'b0; 
                 alu_src = 1'b1;
                 mem_to_reg = 1'b1;
-                jump_sel = 1'b0; // it can be X.
-                pc_jump = 1'b0;
+                // jump_sel = 1'b0; // it can be X.
+                // pc_jump = 1'b0;
                 pc_src = ZERO & branch;
                 reg_write = 1'b1;
                 mem_read = 1'b1;
-                mem_write = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = MTYPE;
             end
 
             BEQ: begin
-                reg_dst = 1'b0; // it can be X.
-                jal_reg = 1'b0; // it can be X.
-                pc_to_reg = 1'b0; // it can be X.
-                alu_src = 1'b0;
+                // reg_dst = 1'b0; // it can be X.
+                // jal_reg = 1'b0; // it can be X.
+                // pc_to_reg = 1'b0; // it can be X.
+                // alu_src = 1'b0;
                 mem_to_reg = 1'b1; // it can be X.
-                jump_sel = 1'b0; // it can be X.
-                pc_jump = 1'b0;
+                // jump_sel = 1'b0; // it can be X.
+                // pc_jump = 1'b0;
                 pc_src = ZERO & branch;
-                reg_write = 1'b0;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // reg_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = BTYPE;
             end
 
             BNE: begin
-                reg_dst = 1'b0; // it can be X.
-                jal_reg = 1'b0; // it can be X.
-                pc_to_reg = 1'b0; // it can be X.
-                alu_src = 1'b0;
+                // reg_dst = 1'b0; // it can be X.
+                // jal_reg = 1'b0; // it can be X.
+                // pc_to_reg = 1'b0; // it can be X.
+                // alu_src = 1'b0;
                 mem_to_reg = 1'b1; // it can be X.
-                jump_sel = 1'b0; // it can be X.
-                pc_jump = 1'b0;
+                // jump_sel = 1'b0; // it can be X.
+                // pc_jump = 1'b0;
                 pc_src = ~ZERO & branch;
-                reg_write = 1'b0;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // reg_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = BTYPE;
             end
 
             J: begin
-                reg_dst = 1'b0; // it can be X.
-                jal_reg = 1'b0; // it can be X.
-                pc_to_reg = 1'b0; // it can be X.
-                alu_src = 1'b0; // it can be X.
-                mem_to_reg = 1'b0; // it can be X.
+                // reg_dst = 1'b0; // it can be X.
+                // jal_reg = 1'b0; // it can be X.
+                // pc_to_reg = 1'b0; // it can be X.
+                // alu_src = 1'b0; // it can be X.
+                // mem_to_reg = 1'b0; // it can be X.
                 jump_sel = 1'b1; 
                 pc_jump = 1'b1;
-                pc_src = ZERO & branch; // it can be X.
-                reg_write = 1'b0;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // pc_src = ZERO & branch; // it can be X.
+                // reg_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = JTYPE;
             end
 
             JAL: begin
-                reg_dst = 1'b0; // it can be X.
+                // reg_dst = 1'b0; // it can be X.
                 jal_reg = 1'b1; 
                 pc_to_reg = 1'b1;
-                alu_src = 1'b0; // it can be X.
-                mem_to_reg = 1'b0; // it can be X.
+                // alu_src = 1'b0; // it can be X.
+                // mem_to_reg = 1'b0; // it can be X.
                 jump_sel = 1'b1; 
                 pc_jump = 1'b1;
-                pc_src = ZERO & branch; // it can be X.
+                // pc_src = ZERO & branch; // it can be X.
                 reg_write = 1'b1;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = JTYPE;
             end
 
             ADDI: begin
-                reg_dst = 1'b0; 
-                jal_reg = 1'b0; 
-                pc_to_reg = 1'b0;
+                // reg_dst = 1'b0; 
+                // jal_reg = 1'b0; 
+                // pc_to_reg = 1'b0;
                 alu_src = 1'b1; 
-                mem_to_reg = 1'b0; 
-                jump_sel = 1'b0; // it can be X.
-                pc_jump = 1'b1; // it can be X.
+                // mem_to_reg = 1'b0; 
+                // jump_sel = 1'b0; // it can be X.
+                // pc_jump = 1'b0; // it can be X.
                 pc_src = ZERO & branch;
                 reg_write = 1'b1;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = RTYPE;
             end
 
             ANDI: begin
-                reg_dst = 1'b0; 
-                jal_reg = 1'b0; 
-                pc_to_reg = 1'b0;
+                // reg_dst = 1'b0; 
+                // jal_reg = 1'b0; 
+                // pc_to_reg = 1'b0;
                 alu_src = 1'b1; 
-                mem_to_reg = 1'b0; 
-                jump_sel = 1'b0; // it can be X.
+                // mem_to_reg = 1'b0; 
+                // jump_sel = 1'b0; // it can be X.
                 pc_jump = 1'b1; // it can be X.
                 pc_src = ZERO & branch;
                 reg_write = 1'b1;
-                mem_read = 1'b0;
-                mem_write = 1'b0;
+                // mem_read = 1'b0;
+                // mem_write = 1'b0;
                 alu_op = RTYPE;
             end
 

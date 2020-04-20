@@ -1,10 +1,11 @@
 `include "constant_values.h"
 `timescale 1 ns/1 ns
 module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
-            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO);
+            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO, opcode, func);
     output ZERO;
     input clk , rst;
-    
+    output reg [5:0] opcode, func;
+
     //control signals
     input reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
             jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write;
@@ -21,7 +22,7 @@ module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
     pc program_counter(mux_pc_jump_out , pc_out , clk , rst);
     
     instruction_mem inst_mem(pc_out , instructs);
-    
+
     register_file reg_file(instructs[25:21] , instructs[20:16] , mux_jal_reg_out , mux_pc_to_reg_out, reg_write , read_data_1 , read_data_2 , clk);
     
     alu alu_unit(read_data_1 , mux_alu_src_out , alu_result , ZERO , alu_cntrl);
@@ -46,38 +47,9 @@ module data_path(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
     mux_32_bit mux_pc_jump(mux_pc_src_out , mux_jump_sel_out , mux_pc_jump_out , pc_jump);
     mux_32_bit mux_pc_src(adder_pc_plus_4_out , adder_beq_out , mux_pc_src_out , pc_src);
 
-endmodule
+    always @(instructs) begin
+        opcode = instructs[31:26];
+        func = instructs[5:0];
+    end
 
-module data_path_test();
-    wire ZERO;
-    reg clk , rst;
-    reg reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
-            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write;
-	reg [2:0] alu_cntrl;
-	data_path data_path_test(reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
-            jump_sel , pc_jump , pc_src , reg_write , mem_read , mem_write , alu_cntrl ,clk , rst , ZERO);
-
-	initial begin
-        #100 clk = 1'b1;
-		repeat(200) #50 clk = ~clk;
-	end
-
-	initial begin
-        #100 rst = 1'b1;
-        pc_jump = 1'b0;
-		pc_src = 1'b0;
-        reg_dst = 1'b0;
-		jal_reg = 1'b0;
-		alu_cntrl = `ADD;
-		mem_to_reg = 1'b1;
-		pc_to_reg = 1'b0;
-		alu_src = 1'b1;
-        jump_sel = 1'b0;
-		reg_write = 1'b1;
-		mem_read = 1'b1;
-		mem_write = 1'b0;
-        #50 rst = 1'b0;
-        #150;
-		$stop;
-	end
 endmodule
