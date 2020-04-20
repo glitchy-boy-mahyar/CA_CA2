@@ -7,11 +7,11 @@ module instruction_mem(address, instruction);
     reg [31:0] mem[0: 2** 16 - 1];
     
     always @(address) begin
-        instruction = mem[address];
+        instruction = mem[address[19:2]];
         $display("@%t: INST_MEM: data at address %d is read", $time, address);
     end
 
     initial begin
-        $readmemb("inst_mem.txt", mem);
+        $readmemb("./benchmark/bm_2.bin", mem);
     end
 endmodule

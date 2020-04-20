@@ -7,23 +7,43 @@ module alu(a, b, y, zero, alu_ctrl);
     output reg zero;
     input [2:0] alu_ctrl;
 
-    always @(alu_ctrl, a, b) begin
+    always @(alu_ctrl or a or b) begin
+        y = `Z;
         case (alu_ctrl)
-            `AND: y = a & b;
-            `OR: y = a | b;
-            `ADD: y = a + b;
-            `SUB: y = a - b;
+            `AND: begin
+                y = a & b;
+                $display("@%t: ALU::AND: a = %d, b = %d", $time, a, b);
+            end
+            
+            `OR: begin
+                y = a | b;
+                $display("@%t: ALU::OR: a = %d, b = %d", $time, a, b);
+            end
+            
+            `ADD: begin
+                y = a + b;
+                $display("@%t: ALU::ADD: a = %d, b = %d", $time, a, b);
+            end
+            
+            `SUB: begin
+                y = a - b;
+                $display("@%t: ALU::SUB: a = %d, b = %d", $time, a, b);
+            end
+
             `SLT: begin
                 if (a[31] == 1'b1 && b[31] == 1'b1)
-                    y = a < b;
+                    y = a < b? `WORD_ONE: `WORD_ZERO;
                 else if (a[31] == 1'b0 && b[31] == 1'b1)
-                    y = {31'b0, 1'b1};
+                    y = `WORD_ONE;
                 else if (a[31] == 1'b1 && b[31] == 1'b0)
-                    y = 32'b0;
+                    y = `WORD_ZERO;
                 else if (a[31] == 1'b0 && b[31] == 1'b0)
-                    y = a < b; 
+                    y = a < b? `WORD_ONE: `WORD_ZERO;
+                $display("@%t: ALU::SLT: a = %d, b = %d", $time, a, b);
             end
             `OFF: y = `Z;
+
+            default: y = `Z;
         endcase
     end
 

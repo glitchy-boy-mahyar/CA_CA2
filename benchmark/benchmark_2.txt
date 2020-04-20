@@ -1,0 +1,11 @@
+    add R1, R0, R0
+    addi R10, R0, 10
+FOR: lw R2, 0(R1)
+    addi R3, R2, 5
+    sw R3, 0(R1)
+    addi R1, R1, 1
+    slt R4, R1, R10
+    beq R4, R0, END_FOR
+    j FOR
+END_FOR:
+    

@@ -1,0 +1,6 @@
+addi R1, R0, 7
+slt R3, R0, R1
+lw R6, 2(R0)
+sub R2, R1, R6
+add R4, R1, R6
+slt R5, R2, R6

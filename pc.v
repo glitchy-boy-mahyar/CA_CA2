@@ -8,11 +8,11 @@ module pc(in, out, clk , rst);
     always @(posedge clk or posedge rst) begin
         if (rst == 1'b1) begin
             out <= `WORD_ZERO;
-            $display("@%t: PC::RESET; PC is now %d", $time, out);
+            $display("@%t: PC::RESET; PC is now 0", $time);
         end
         else begin
             out <= in;
-            $display("@%t: PC is now %d", $time, out);
+            $display("@%t: PC is now %d", $time, in);
         end
     end
 

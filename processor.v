@@ -16,14 +16,16 @@ endmodule
 module processor_test();
     reg clk, rst;
     processor mips(clk, rst);
+
     initial begin
         clk = 1'b1;
-        repeat(100) #50 clk = ~clk;
+        repeat(1000) #50 clk = ~clk;
     end
 
     initial begin
         rst = 1'b1;
         #50 rst = 1'b0;
-        #300 $stop;
+        #7150 $stop;
+        
     end
 endmodule
