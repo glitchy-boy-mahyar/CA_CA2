@@ -14,7 +14,7 @@ module register_file(read_reg1, read_reg2, write_reg, write_data,
 
     // reading registers from file
     initial begin
-		$readmemb("./data/registers.txt", registers);
+		$readmemb("./data/registers.bin", registers);
 	end
 
     always @(read_reg1 or read_reg2 or registers[read_reg1] or registers[read_reg2]) begin

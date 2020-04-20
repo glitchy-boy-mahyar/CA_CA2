@@ -16,7 +16,10 @@ module data_mem(address, write_data, read_data,
 	// load the memory with some initial values
 	// from the given directory
 	initial begin
-		$readmemb("./data/data_mem_1.bin", mem);
+		// general test
+		// $readmemb("./data/data_mem_1.bin", mem);
+		// test 1
+		$readmemb("./data/test_1_data_mem.bin", mem);
 	end
 	
 	always @(posedge clk) begin
@@ -94,7 +97,7 @@ module data_mem_test_2();
 	initial begin
 		mem_read = 1'b1;
 		address = `WORD_ZERO;
-		for (i = 0; i < 100; i = i + 1)
-			#500 address = address + 1;
+		for (i = 1000; i < 10; i = i + 1)
+			#500 address = i;
 	end
 endmodule

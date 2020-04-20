@@ -12,6 +12,21 @@ module instruction_mem(address, instruction);
     end
 
     initial begin
-        $readmemb("./benchmark/bm_2.bin", mem);
+        $readmemb("./benchmark/test_1.bin", mem);
     end
+endmodule
+
+module inst_mem_test();
+    reg [31:0] address;
+    wire [31:0] instruction;
+    instruction_mem inst_mem_test(address, instruction);
+    integer i;
+
+    initial begin
+        address = 32'b0;
+        for (i = 0; i < 4; i = i + 1)
+            #500 address = 4 * i;
+        #1000;
+    end
+
 endmodule
