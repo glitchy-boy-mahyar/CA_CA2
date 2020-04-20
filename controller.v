@@ -209,4 +209,5 @@ module controller(ZERO , opcode , func , reg_dst , jal_reg , pc_to_reg , alu_src
 
         endcase
     end
+    
 endmodule
