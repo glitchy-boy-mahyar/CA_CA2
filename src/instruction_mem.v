@@ -14,8 +14,10 @@ module instruction_mem(address, instruction);
     end
 
     initial begin
-        $readmemb("./benchmark/test_1.bin", mem);
+    //    $readmemb("./benchmark/test_1.bin", mem);
+          $readmemb("./benchmark/test_bench2.bin", mem);
     end
+    
 endmodule
 
 module inst_mem_test();

@@ -19,7 +19,8 @@ module data_mem(address, write_data, read_data,
 		// general test
 		// $readmemb("./data/data_mem_1.bin", mem);
 		// test 1
-		$readmemb("./data/test_1_data_mem.bin", mem);
+		//$readmemb("./data/test_1_data_mem.bin", mem);
+		$readmemb("./data/test_2_data_mem.bin", mem);
 	end
 	
 	always @(posedge clk) begin
