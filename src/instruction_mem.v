@@ -4,10 +4,12 @@
 module instruction_mem(address, instruction);
     input [31:0] address;
     output reg [31:0] instruction;
-    reg [31:0] mem[0: 2** 16 - 1];
+    // reg [31:0] mem[0: 2** 16 - 1];
+    reg [7:0] mem [0:2 ** 16 - 1];
     
     always @(address) begin
-        instruction = mem[address[19:2]];
+        instruction = {mem[address[15:0]], mem[address[15:0] + 1], 
+                mem[address[15:0] + 2], mem[address[15:0] + 3]};
         $display("@%t: INST_MEM: data at address %d is read", $time, address);
     end
 

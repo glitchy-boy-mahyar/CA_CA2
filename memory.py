@@ -7,7 +7,10 @@ import random
 # of numbers 0 to 99
 
 with open('./data/test_1_data_mem.bin', 'w') as test_1:
-    for i in range(1000):
-        test_1.write('{:032b}\n'.format(0))
+    number = ''
+    for i in range(250):
+        number = '{:032b}'.format(0)
+        test_1.write(number[0:8] + ' ' + number[8:16] + ' ' + number[16:24] + ' ' + number[24:32] + '\n')
     for i in range(10):
-        test_1.write('{:032b}\n'.format(i))
+        number = '{:032b}'.format(i)
+        test_1.write(number[0:8] + ' ' + number[8:16] + ' ' + number[16:24] + ' ' + number[24:32] + '\n')
