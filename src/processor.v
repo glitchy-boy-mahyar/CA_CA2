@@ -25,8 +25,9 @@ module processor_test();
     initial begin
         rst = 1'b1;
         #50 rst = 1'b0;
-        #15100 $stop;
-        
+        #15100 $stop; // it is for testbench no.2
+
+        //#6300 $stop; // it is for testbench no.1
         
     end
 endmodule

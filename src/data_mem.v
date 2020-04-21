@@ -1,5 +1,5 @@
 `timescale 1 ns / 1 ns
-`include "./src/constant_values.h"
+`include "constant_values.h"
 
 module data_mem(address, write_data, read_data, 
 		mem_read, mem_write, clk);
@@ -10,17 +10,14 @@ module data_mem(address, write_data, read_data,
 	input mem_read, mem_write;
 	input clk;
 	
-	// reg [31:0] mem[0:2 ** 16 - 1];
 	reg [7:0] mem[0:2 ** 16 - 1];
 	// uncommenting the following lines would
 	// load the memory with some initial values
 	// from the given directory
 	initial begin
-		// general test
-		// $readmemb("./data/data_mem_1.bin", mem);
 		// test 1
 		//$readmemb("./data/test_1_data_mem.bin", mem);
-		$readmemb("./data/test_2_data_mem.bin", mem);
+		$readmemb("./data/test_2_data_mem.bin", mem); // it is for testbench no.2
 	end
 	
 	always @(posedge clk) begin
@@ -42,14 +39,6 @@ module data_mem(address, write_data, read_data,
 			read_data = `Z;
 	end
 
-	// assign read_data = (mem_read == 1'b1) ? mem[address[15:0]] : `WORD_ZERO;
-	
-	// following line is to save the memory data to txt file
-	// initial begin
-		// $writememb("test_1.txt", mem);
-	// end
-
-	
 endmodule
 
 module data_mem_test();

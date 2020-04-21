@@ -1,10 +1,9 @@
 `timescale 1 ns / 1 ns
-`include "./src/constant_values.h"
+`include "constant_values.h"
 
 module instruction_mem(address, instruction);
     input [31:0] address;
     output reg [31:0] instruction;
-    // reg [31:0] mem[0: 2** 16 - 1];
     reg [7:0] mem [0:2 ** 16 - 1];
     
     always @(address) begin
@@ -15,7 +14,7 @@ module instruction_mem(address, instruction);
 
     initial begin
     //    $readmemb("./benchmark/test_1.bin", mem);
-          $readmemb("./benchmark/test_bench2.bin", mem);
+          $readmemb("./benchmark/test_2.bin", mem);
     end
     
 endmodule

@@ -1,5 +1,5 @@
 `timescale 1 ns / 1 ns
-`include "./src/constant_values.h"
+`include "constant_values.h"
 
 module alu_controller(alu_op, func, alu_operation);
     input [1:0] alu_op;

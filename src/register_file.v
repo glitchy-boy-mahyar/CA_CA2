@@ -1,5 +1,5 @@
 `timescale 1 ns / 1 ns
-`include "./src/constant_values.h"
+`include "constant_values.h"
 
 module register_file(read_reg1, read_reg2, write_reg, write_data,
                         reg_write, read_data1, read_data2 , clk);
@@ -30,12 +30,6 @@ module register_file(read_reg1, read_reg2, write_reg, write_data,
             $display("@%t: REG_FILE::WRITE: value %d stored in register %d", $time, write_data, write_reg);
         end
     end
-
-    // writing to registers after operations finished
-    // initial begin
-        // $writememb("registers.mem",registers);
-    // end
-
 endmodule
 
 module reg_file_test();

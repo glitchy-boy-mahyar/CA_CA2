@@ -6,9 +6,6 @@ module shifter_for_jump(instructs , pc , shifted_address);
     always @(instructs or pc) begin
         shifted_address = { {pc[31:28]} , {instructs[25:0]} , {2'b00} };
     end
-
-    //assign shifted_address = sign_extended_address << 2;
-
 endmodule
 
 

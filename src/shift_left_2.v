@@ -7,9 +7,6 @@ module shift_left_2(sign_extended_address , shifted_address);
     always @(sign_extended_address)begin
       shifted_address = sign_extended_address << 2;
     end
-
-    //assign shifted_address = sign_extended_address << 2;
-
 endmodule
 
 
