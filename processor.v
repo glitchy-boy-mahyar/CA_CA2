@@ -1,3 +1,4 @@
+`timescale 1 ns / 1 ns
 module processor(clk, rst);
     input clk, rst;
     wire reg_dst , jal_reg , pc_to_reg , alu_src , mem_to_reg ,
@@ -18,16 +19,16 @@ module processor_test();
     processor mips(clk, rst);
 
     initial begin
-        clk = 1'b1;
+        #100 clk = 1'b1;
         repeat(1000) #50 clk = ~clk;
     end
 
     initial begin
         rst = 1'b1;
         #50 rst = 1'b0;
-        #15100 $stop; // it is for testbench no.2
+        // #15100 $stop; // it is for testbench no.2
 
-        //#6300 $stop; // it is for testbench no.1
+        #6300 $stop; // it is for testbench no.1
         
     end
 endmodule

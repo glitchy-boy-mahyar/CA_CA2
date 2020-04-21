@@ -13,8 +13,8 @@ module instruction_mem(address, instruction);
     end
 
     initial begin
-    //    $readmemb("test_1.bin", mem);
-          $readmemb("test_2.bin", mem);
+        $readmemb("test_1.bin", mem);
+        // $readmemb("test_2.bin", mem);
     end
     
 endmodule
