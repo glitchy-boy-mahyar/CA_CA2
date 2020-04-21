@@ -11,13 +11,10 @@ module data_mem(address, write_data, read_data,
 	input clk;
 	
 	reg [7:0] mem[0:2 ** 16 - 1];
-	// uncommenting the following lines would
-	// load the memory with some initial values
-	// from the given directory
+
 	initial begin
-		// test 1
-		//$readmemb("./data/test_1_data_mem.bin", mem);
-		$readmemb("./data/test_2_data_mem.bin", mem); // it is for testbench no.2
+		//$readmemb("test_1_data_mem.bin", mem); // it is for testbench no.1
+		$readmemb("test_2_data_mem.bin", mem); // it is for testbench no.2
 	end
 	
 	always @(posedge clk) begin
@@ -40,6 +37,9 @@ module data_mem(address, write_data, read_data,
 	end
 
 endmodule
+
+
+
 
 module data_mem_test();
 	reg [31:0] address, write_data;

@@ -32,11 +32,6 @@ module register_file(read_reg1, read_reg2, write_reg, write_data,
     end
 endmodule
 
-
-
-
-
-
 module reg_file_test();
     reg [4:0] read_reg1, read_reg2 , write_reg;
     reg [31:0] write_data;

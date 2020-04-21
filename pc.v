@@ -18,6 +18,10 @@ module pc(in, out, clk , rst);
 
 endmodule
 
+
+
+
+
 module pc_test();
     reg [31:0] in;
     wire [31:0] out;
