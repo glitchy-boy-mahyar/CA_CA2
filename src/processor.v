@@ -25,7 +25,8 @@ module processor_test();
     initial begin
         rst = 1'b1;
         #50 rst = 1'b0;
-        #6300 $stop;
+        #15100 $stop;
+        
         
     end
 endmodule
