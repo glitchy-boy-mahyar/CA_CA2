@@ -18,4 +18,4 @@ If: add R10, R0, R11
     j FOR
 END_FOR: 
     sw R10, 2000(R0)
-    sw
+    sw R5, 2004(R0)
