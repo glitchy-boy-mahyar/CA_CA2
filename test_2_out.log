@@ -1,0 +1,1092 @@
+# @                   0: PC::RESET; PC is now 0
+# @                   0: INST_MEM: data at address          0 is read
+# @                   0: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                   0: ALU_CTRL::RTYPE: func = 32
+# @                   0: ALU::ADD: a =          0, b =          0
+# @                 100: PC is now          4
+# @                 100: REG_FILE::WRITE: value          0 stored in register  1
+# @                 100: INST_MEM: data at address          4 is read
+# @                 200: PC is now          8
+# @                 200: REG_FILE::WRITE: value          0 stored in register  2
+# @                 200: INST_MEM: data at address          8 is read
+# @                 300: PC is now         12
+# @                 300: REG_FILE::WRITE: value          0 stored in register  5
+# @                 300: INST_MEM: data at address         12 is read
+# @                 300: REG_FILE::READ: registers  0 =          0,  3 =          0 are read
+# @                 300: ALU::ADD: a =          0, b =         76
+# @                 400: PC is now         16
+# @                 400: REG_FILE::WRITE: value         76 stored in register  3
+# @                 400: INST_MEM: data at address         16 is read
+# @                 400: REG_FILE::READ: registers  0 =          0,  3 =         76 are read
+# @                 400: REG_FILE::READ: registers  1 =          0, 10 =          0 are read
+# @                 400: ALU::ADD: a =          0, b =       1000
+# @                 400: ALU_CTRL::MTYPE
+# @                 400: DATA_MEM::READ: value          0 at address    76 is read
+# @                 400: DATA_MEM::READ: value          2 at address  1000 is read
+# @                 500: PC is now         20
+# @                 500: REG_FILE::WRITE: value          2 stored in register 10
+# @                 500: INST_MEM: data at address         20 is read
+# @                 500: REG_FILE::READ: registers  1 =          0, 10 =          2 are read
+# @                 500: REG_FILE::READ: registers  3 =         76,  1 =          0 are read
+# @                 500: ALU::ADD: a =         76, b =       1000
+# @                 500: ALU::ADD: a =         76, b =          9
+# @                 500: ALU_CTRL::BTYPE
+# @                 500: ALU::SUB: a =         76, b =          0
+# @                 600: PC is now         24
+# @                 600: INST_MEM: data at address         24 is read
+# @                 600: REG_FILE::READ: registers  1 =          0,  1 =          0 are read
+# @                 600: ALU::SUB: a =          0, b =          0
+# @                 600: ALU_CTRL::RTYPE: func = 32
+# @                 600: ALU::ADD: a =          0, b =          4
+# @                 700: PC is now         28
+# @                 700: REG_FILE::WRITE: value          4 stored in register  1
+# @                 700: INST_MEM: data at address         28 is read
+# @                 700: REG_FILE::READ: registers  1 =          4,  1 =          4 are read
+# @                 700: REG_FILE::READ: registers  2 =          0,  2 =          0 are read
+# @                 700: ALU::ADD: a =          4, b =          4
+# @                 700: ALU::ADD: a =          0, b =          4
+# @                 700: ALU::ADD: a =          0, b =          1
+# @                 800: PC is now         32
+# @                 800: REG_FILE::WRITE: value          1 stored in register  2
+# @                 800: INST_MEM: data at address         32 is read
+# @                 800: REG_FILE::READ: registers  2 =          1,  2 =          1 are read
+# @                 800: REG_FILE::READ: registers  1 =          4, 11 =          0 are read
+# @                 800: ALU::ADD: a =          1, b =          1
+# @                 800: ALU::ADD: a =          4, b =          1
+# @                 800: ALU::ADD: a =          4, b =       1000
+# @                 800: ALU_CTRL::MTYPE
+# @                 800: DATA_MEM::READ: value          0 at address     5 is read
+# @                 800: DATA_MEM::READ: value          5 at address  1004 is read
+# @                 900: PC is now         36
+# @                 900: REG_FILE::WRITE: value          5 stored in register 11
+# @                 900: INST_MEM: data at address         36 is read
+# @                 900: REG_FILE::READ: registers  1 =          4, 11 =          5 are read
+# @                 900: REG_FILE::READ: registers 10 =          2, 11 =          5 are read
+# @                 900: ALU::ADD: a =          2, b =       1000
+# @                 900: ALU::ADD: a =          2, b = 4294942762
+# @                 900: ALU_CTRL::RTYPE: func = 42
+# @                 900: ALU::SLT: a =          2, b =          5
+# @                1000: PC is now         40
+# @                1000: REG_FILE::WRITE: value          1 stored in register 20
+# @                1000: INST_MEM: data at address         40 is read
+# @                1000: REG_FILE::READ: registers 20 =          1,  0 =          0 are read
+# @                1000: ALU::SLT: a =          1, b =          5
+# @                1000: ALU::SLT: a =          1, b =          0
+# @                1000: ALU_CTRL::BTYPE
+# @                1000: ALU::SUB: a =          1, b =          0
+# @                1100: PC is now         48
+# @                1100: INST_MEM: data at address         48 is read
+# @                1100: REG_FILE::READ: registers  0 =          0, 11 =          5 are read
+# @                1100: ALU::SUB: a =          0, b =          0
+# @                1100: ALU::SUB: a =          0, b =          5
+# @                1100: ALU_CTRL::RTYPE: func = 32
+# @                1100: ALU::ADD: a =          0, b =          5
+# @                1200: PC is now         52
+# @                1200: REG_FILE::WRITE: value          5 stored in register 10
+# @                1200: INST_MEM: data at address         52 is read
+# @                1200: REG_FILE::READ: registers  0 =          0,  2 =          1 are read
+# @                1200: ALU::ADD: a =          0, b =          1
+# @                1300: PC is now         56
+# @                1300: REG_FILE::WRITE: value          1 stored in register  5
+# @                1300: INST_MEM: data at address         56 is read
+# @                1300: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                1300: ALU::ADD: a =          0, b =          0
+# @                1300: ALU_CTRL::JTYPE
+# @                1400: PC is now         20
+# @                1400: INST_MEM: data at address         20 is read
+# @                1400: REG_FILE::READ: registers  3 =         76,  1 =          4 are read
+# @                1400: ALU_CTRL::BTYPE
+# @                1400: ALU::SUB: a =         76, b =          4
+# @                1500: PC is now         24
+# @                1500: INST_MEM: data at address         24 is read
+# @                1500: REG_FILE::READ: registers  1 =          4,  1 =          4 are read
+# @                1500: ALU::SUB: a =          4, b =          4
+# @                1500: ALU_CTRL::RTYPE: func = 32
+# @                1500: ALU::ADD: a =          4, b =          4
+# @                1600: PC is now         28
+# @                1600: REG_FILE::WRITE: value          8 stored in register  1
+# @                1600: INST_MEM: data at address         28 is read
+# @                1600: REG_FILE::READ: registers  1 =          8,  1 =          8 are read
+# @                1600: REG_FILE::READ: registers  2 =          1,  2 =          1 are read
+# @                1600: ALU::ADD: a =          8, b =          4
+# @                1600: ALU::ADD: a =          1, b =          4
+# @                1600: ALU::ADD: a =          1, b =          1
+# @                1700: PC is now         32
+# @                1700: REG_FILE::WRITE: value          2 stored in register  2
+# @                1700: INST_MEM: data at address         32 is read
+# @                1700: REG_FILE::READ: registers  2 =          2,  2 =          2 are read
+# @                1700: REG_FILE::READ: registers  1 =          8, 11 =          5 are read
+# @                1700: ALU::ADD: a =          2, b =          1
+# @                1700: ALU::ADD: a =          8, b =          1
+# @                1700: ALU::ADD: a =          8, b =       1000
+# @                1700: ALU_CTRL::MTYPE
+# @                1700: DATA_MEM::READ: value          0 at address     9 is read
+# @                1700: DATA_MEM::READ: value          6 at address  1008 is read
+# @                1800: PC is now         36
+# @                1800: REG_FILE::WRITE: value          6 stored in register 11
+# @                1800: INST_MEM: data at address         36 is read
+# @                1800: REG_FILE::READ: registers  1 =          8, 11 =          6 are read
+# @                1800: REG_FILE::READ: registers 10 =          5, 11 =          6 are read
+# @                1800: ALU::ADD: a =          5, b =       1000
+# @                1800: ALU::ADD: a =          5, b = 4294942762
+# @                1800: ALU_CTRL::RTYPE: func = 42
+# @                1800: ALU::SLT: a =          5, b =          6
+# @                1900: PC is now         40
+# @                1900: REG_FILE::WRITE: value          1 stored in register 20
+# @                1900: INST_MEM: data at address         40 is read
+# @                1900: REG_FILE::READ: registers 20 =          1,  0 =          0 are read
+# @                1900: ALU::SLT: a =          1, b =          6
+# @                1900: ALU::SLT: a =          1, b =          0
+# @                1900: ALU_CTRL::BTYPE
+# @                1900: ALU::SUB: a =          1, b =          0
+# @                2000: PC is now         48
+# @                2000: INST_MEM: data at address         48 is read
+# @                2000: REG_FILE::READ: registers  0 =          0, 11 =          6 are read
+# @                2000: ALU::SUB: a =          0, b =          0
+# @                2000: ALU::SUB: a =          0, b =          6
+# @                2000: ALU_CTRL::RTYPE: func = 32
+# @                2000: ALU::ADD: a =          0, b =          6
+# @                2100: PC is now         52
+# @                2100: REG_FILE::WRITE: value          6 stored in register 10
+# @                2100: INST_MEM: data at address         52 is read
+# @                2100: REG_FILE::READ: registers  0 =          0,  2 =          2 are read
+# @                2100: ALU::ADD: a =          0, b =          2
+# @                2200: PC is now         56
+# @                2200: REG_FILE::WRITE: value          2 stored in register  5
+# @                2200: INST_MEM: data at address         56 is read
+# @                2200: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                2200: ALU::ADD: a =          0, b =          0
+# @                2200: ALU_CTRL::JTYPE
+# @                2300: PC is now         20
+# @                2300: INST_MEM: data at address         20 is read
+# @                2300: REG_FILE::READ: registers  3 =         76,  1 =          8 are read
+# @                2300: ALU_CTRL::BTYPE
+# @                2300: ALU::SUB: a =         76, b =          8
+# @                2400: PC is now         24
+# @                2400: INST_MEM: data at address         24 is read
+# @                2400: REG_FILE::READ: registers  1 =          8,  1 =          8 are read
+# @                2400: ALU::SUB: a =          8, b =          8
+# @                2400: ALU_CTRL::RTYPE: func = 32
+# @                2400: ALU::ADD: a =          8, b =          4
+# @                2500: PC is now         28
+# @                2500: REG_FILE::WRITE: value         12 stored in register  1
+# @                2500: INST_MEM: data at address         28 is read
+# @                2500: REG_FILE::READ: registers  1 =         12,  1 =         12 are read
+# @                2500: REG_FILE::READ: registers  2 =          2,  2 =          2 are read
+# @                2500: ALU::ADD: a =         12, b =          4
+# @                2500: ALU::ADD: a =          2, b =          4
+# @                2500: ALU::ADD: a =          2, b =          1
+# @                2600: PC is now         32
+# @                2600: REG_FILE::WRITE: value          3 stored in register  2
+# @                2600: INST_MEM: data at address         32 is read
+# @                2600: REG_FILE::READ: registers  2 =          3,  2 =          3 are read
+# @                2600: REG_FILE::READ: registers  1 =         12, 11 =          6 are read
+# @                2600: ALU::ADD: a =          3, b =          1
+# @                2600: ALU::ADD: a =         12, b =          1
+# @                2600: ALU::ADD: a =         12, b =       1000
+# @                2600: ALU_CTRL::MTYPE
+# @                2600: DATA_MEM::READ: value          0 at address    13 is read
+# @                2600: DATA_MEM::READ: value         54 at address  1012 is read
+# @                2700: PC is now         36
+# @                2700: REG_FILE::WRITE: value         54 stored in register 11
+# @                2700: INST_MEM: data at address         36 is read
+# @                2700: REG_FILE::READ: registers  1 =         12, 11 =         54 are read
+# @                2700: REG_FILE::READ: registers 10 =          6, 11 =         54 are read
+# @                2700: ALU::ADD: a =          6, b =       1000
+# @                2700: ALU::ADD: a =          6, b = 4294942762
+# @                2700: ALU_CTRL::RTYPE: func = 42
+# @                2700: ALU::SLT: a =          6, b =         54
+# @                2800: PC is now         40
+# @                2800: REG_FILE::WRITE: value          1 stored in register 20
+# @                2800: INST_MEM: data at address         40 is read
+# @                2800: REG_FILE::READ: registers 20 =          1,  0 =          0 are read
+# @                2800: ALU::SLT: a =          1, b =         54
+# @                2800: ALU::SLT: a =          1, b =          0
+# @                2800: ALU_CTRL::BTYPE
+# @                2800: ALU::SUB: a =          1, b =          0
+# @                2900: PC is now         48
+# @                2900: INST_MEM: data at address         48 is read
+# @                2900: REG_FILE::READ: registers  0 =          0, 11 =         54 are read
+# @                2900: ALU::SUB: a =          0, b =          0
+# @                2900: ALU::SUB: a =          0, b =         54
+# @                2900: ALU_CTRL::RTYPE: func = 32
+# @                2900: ALU::ADD: a =          0, b =         54
+# @                3000: PC is now         52
+# @                3000: REG_FILE::WRITE: value         54 stored in register 10
+# @                3000: INST_MEM: data at address         52 is read
+# @                3000: REG_FILE::READ: registers  0 =          0,  2 =          3 are read
+# @                3000: ALU::ADD: a =          0, b =          3
+# @                3100: PC is now         56
+# @                3100: REG_FILE::WRITE: value          3 stored in register  5
+# @                3100: INST_MEM: data at address         56 is read
+# @                3100: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                3100: ALU::ADD: a =          0, b =          0
+# @                3100: ALU_CTRL::JTYPE
+# @                3200: PC is now         20
+# @                3200: INST_MEM: data at address         20 is read
+# @                3200: REG_FILE::READ: registers  3 =         76,  1 =         12 are read
+# @                3200: ALU_CTRL::BTYPE
+# @                3200: ALU::SUB: a =         76, b =         12
+# @                3300: PC is now         24
+# @                3300: INST_MEM: data at address         24 is read
+# @                3300: REG_FILE::READ: registers  1 =         12,  1 =         12 are read
+# @                3300: ALU::SUB: a =         12, b =         12
+# @                3300: ALU_CTRL::RTYPE: func = 32
+# @                3300: ALU::ADD: a =         12, b =          4
+# @                3400: PC is now         28
+# @                3400: REG_FILE::WRITE: value         16 stored in register  1
+# @                3400: INST_MEM: data at address         28 is read
+# @                3400: REG_FILE::READ: registers  1 =         16,  1 =         16 are read
+# @                3400: REG_FILE::READ: registers  2 =          3,  2 =          3 are read
+# @                3400: ALU::ADD: a =         16, b =          4
+# @                3400: ALU::ADD: a =          3, b =          4
+# @                3400: ALU::ADD: a =          3, b =          1
+# @                3500: PC is now         32
+# @                3500: REG_FILE::WRITE: value          4 stored in register  2
+# @                3500: INST_MEM: data at address         32 is read
+# @                3500: REG_FILE::READ: registers  2 =          4,  2 =          4 are read
+# @                3500: REG_FILE::READ: registers  1 =         16, 11 =         54 are read
+# @                3500: ALU::ADD: a =          4, b =          1
+# @                3500: ALU::ADD: a =         16, b =          1
+# @                3500: ALU::ADD: a =         16, b =       1000
+# @                3500: ALU_CTRL::MTYPE
+# @                3500: DATA_MEM::READ: value          0 at address    17 is read
+# @                3500: DATA_MEM::READ: value         35 at address  1016 is read
+# @                3600: PC is now         36
+# @                3600: REG_FILE::WRITE: value         35 stored in register 11
+# @                3600: INST_MEM: data at address         36 is read
+# @                3600: REG_FILE::READ: registers  1 =         16, 11 =         35 are read
+# @                3600: REG_FILE::READ: registers 10 =         54, 11 =         35 are read
+# @                3600: ALU::ADD: a =         54, b =       1000
+# @                3600: ALU::ADD: a =         54, b = 4294942762
+# @                3600: ALU_CTRL::RTYPE: func = 42
+# @                3600: ALU::SLT: a =         54, b =         35
+# @                3700: PC is now         40
+# @                3700: REG_FILE::WRITE: value          0 stored in register 20
+# @                3700: INST_MEM: data at address         40 is read
+# @                3700: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                3700: ALU::SLT: a =          0, b =         35
+# @                3700: ALU::SLT: a =          0, b =          0
+# @                3700: ALU_CTRL::BTYPE
+# @                3700: ALU::SUB: a =          0, b =          0
+# @                3800: PC is now         44
+# @                3800: INST_MEM: data at address         44 is read
+# @                3800: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                3800: ALU_CTRL::JTYPE
+# @                3900: PC is now         20
+# @                3900: INST_MEM: data at address         20 is read
+# @                3900: REG_FILE::READ: registers  3 =         76,  1 =         16 are read
+# @                3900: ALU_CTRL::BTYPE
+# @                3900: ALU::SUB: a =         76, b =         16
+# @                4000: PC is now         24
+# @                4000: INST_MEM: data at address         24 is read
+# @                4000: REG_FILE::READ: registers  1 =         16,  1 =         16 are read
+# @                4000: ALU::SUB: a =         16, b =         16
+# @                4000: ALU_CTRL::RTYPE: func = 32
+# @                4000: ALU::ADD: a =         16, b =          4
+# @                4100: PC is now         28
+# @                4100: REG_FILE::WRITE: value         20 stored in register  1
+# @                4100: INST_MEM: data at address         28 is read
+# @                4100: REG_FILE::READ: registers  1 =         20,  1 =         20 are read
+# @                4100: REG_FILE::READ: registers  2 =          4,  2 =          4 are read
+# @                4100: ALU::ADD: a =         20, b =          4
+# @                4100: ALU::ADD: a =          4, b =          4
+# @                4100: ALU::ADD: a =          4, b =          1
+# @                4200: PC is now         32
+# @                4200: REG_FILE::WRITE: value          5 stored in register  2
+# @                4200: INST_MEM: data at address         32 is read
+# @                4200: REG_FILE::READ: registers  2 =          5,  2 =          5 are read
+# @                4200: REG_FILE::READ: registers  1 =         20, 11 =         35 are read
+# @                4200: ALU::ADD: a =          5, b =          1
+# @                4200: ALU::ADD: a =         20, b =          1
+# @                4200: ALU::ADD: a =         20, b =       1000
+# @                4200: ALU_CTRL::MTYPE
+# @                4200: DATA_MEM::READ: value          0 at address    21 is read
+# @                4200: DATA_MEM::READ: value         12 at address  1020 is read
+# @                4300: PC is now         36
+# @                4300: REG_FILE::WRITE: value         12 stored in register 11
+# @                4300: INST_MEM: data at address         36 is read
+# @                4300: REG_FILE::READ: registers  1 =         20, 11 =         12 are read
+# @                4300: REG_FILE::READ: registers 10 =         54, 11 =         12 are read
+# @                4300: ALU::ADD: a =         54, b =       1000
+# @                4300: ALU::ADD: a =         54, b = 4294942762
+# @                4300: ALU_CTRL::RTYPE: func = 42
+# @                4300: ALU::SLT: a =         54, b =         12
+# @                4400: PC is now         40
+# @                4400: REG_FILE::WRITE: value          0 stored in register 20
+# @                4400: INST_MEM: data at address         40 is read
+# @                4400: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                4400: ALU::SLT: a =          0, b =         12
+# @                4400: ALU::SLT: a =          0, b =          0
+# @                4400: ALU_CTRL::BTYPE
+# @                4400: ALU::SUB: a =          0, b =          0
+# @                4500: PC is now         44
+# @                4500: INST_MEM: data at address         44 is read
+# @                4500: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                4500: ALU_CTRL::JTYPE
+# @                4600: PC is now         20
+# @                4600: INST_MEM: data at address         20 is read
+# @                4600: REG_FILE::READ: registers  3 =         76,  1 =         20 are read
+# @                4600: ALU_CTRL::BTYPE
+# @                4600: ALU::SUB: a =         76, b =         20
+# @                4700: PC is now         24
+# @                4700: INST_MEM: data at address         24 is read
+# @                4700: REG_FILE::READ: registers  1 =         20,  1 =         20 are read
+# @                4700: ALU::SUB: a =         20, b =         20
+# @                4700: ALU_CTRL::RTYPE: func = 32
+# @                4700: ALU::ADD: a =         20, b =          4
+# @                4800: PC is now         28
+# @                4800: REG_FILE::WRITE: value         24 stored in register  1
+# @                4800: INST_MEM: data at address         28 is read
+# @                4800: REG_FILE::READ: registers  1 =         24,  1 =         24 are read
+# @                4800: REG_FILE::READ: registers  2 =          5,  2 =          5 are read
+# @                4800: ALU::ADD: a =         24, b =          4
+# @                4800: ALU::ADD: a =          5, b =          4
+# @                4800: ALU::ADD: a =          5, b =          1
+# @                4900: PC is now         32
+# @                4900: REG_FILE::WRITE: value          6 stored in register  2
+# @                4900: INST_MEM: data at address         32 is read
+# @                4900: REG_FILE::READ: registers  2 =          6,  2 =          6 are read
+# @                4900: REG_FILE::READ: registers  1 =         24, 11 =         12 are read
+# @                4900: ALU::ADD: a =          6, b =          1
+# @                4900: ALU::ADD: a =         24, b =          1
+# @                4900: ALU::ADD: a =         24, b =       1000
+# @                4900: ALU_CTRL::MTYPE
+# @                4900: DATA_MEM::READ: value          0 at address    25 is read
+# @                4900: DATA_MEM::READ: value         43 at address  1024 is read
+# @                5000: PC is now         36
+# @                5000: REG_FILE::WRITE: value         43 stored in register 11
+# @                5000: INST_MEM: data at address         36 is read
+# @                5000: REG_FILE::READ: registers  1 =         24, 11 =         43 are read
+# @                5000: REG_FILE::READ: registers 10 =         54, 11 =         43 are read
+# @                5000: ALU::ADD: a =         54, b =       1000
+# @                5000: ALU::ADD: a =         54, b = 4294942762
+# @                5000: ALU_CTRL::RTYPE: func = 42
+# @                5000: ALU::SLT: a =         54, b =         43
+# @                5100: PC is now         40
+# @                5100: REG_FILE::WRITE: value          0 stored in register 20
+# @                5100: INST_MEM: data at address         40 is read
+# @                5100: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                5100: ALU::SLT: a =          0, b =         43
+# @                5100: ALU::SLT: a =          0, b =          0
+# @                5100: ALU_CTRL::BTYPE
+# @                5100: ALU::SUB: a =          0, b =          0
+# @                5200: PC is now         44
+# @                5200: INST_MEM: data at address         44 is read
+# @                5200: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                5200: ALU_CTRL::JTYPE
+# @                5300: PC is now         20
+# @                5300: INST_MEM: data at address         20 is read
+# @                5300: REG_FILE::READ: registers  3 =         76,  1 =         24 are read
+# @                5300: ALU_CTRL::BTYPE
+# @                5300: ALU::SUB: a =         76, b =         24
+# @                5400: PC is now         24
+# @                5400: INST_MEM: data at address         24 is read
+# @                5400: REG_FILE::READ: registers  1 =         24,  1 =         24 are read
+# @                5400: ALU::SUB: a =         24, b =         24
+# @                5400: ALU_CTRL::RTYPE: func = 32
+# @                5400: ALU::ADD: a =         24, b =          4
+# @                5500: PC is now         28
+# @                5500: REG_FILE::WRITE: value         28 stored in register  1
+# @                5500: INST_MEM: data at address         28 is read
+# @                5500: REG_FILE::READ: registers  1 =         28,  1 =         28 are read
+# @                5500: REG_FILE::READ: registers  2 =          6,  2 =          6 are read
+# @                5500: ALU::ADD: a =         28, b =          4
+# @                5500: ALU::ADD: a =          6, b =          4
+# @                5500: ALU::ADD: a =          6, b =          1
+# @                5600: PC is now         32
+# @                5600: REG_FILE::WRITE: value          7 stored in register  2
+# @                5600: INST_MEM: data at address         32 is read
+# @                5600: REG_FILE::READ: registers  2 =          7,  2 =          7 are read
+# @                5600: REG_FILE::READ: registers  1 =         28, 11 =         43 are read
+# @                5600: ALU::ADD: a =          7, b =          1
+# @                5600: ALU::ADD: a =         28, b =          1
+# @                5600: ALU::ADD: a =         28, b =       1000
+# @                5600: ALU_CTRL::MTYPE
+# @                5600: DATA_MEM::READ: value          0 at address    29 is read
+# @                5600: DATA_MEM::READ: value         21 at address  1028 is read
+# @                5700: PC is now         36
+# @                5700: REG_FILE::WRITE: value         21 stored in register 11
+# @                5700: INST_MEM: data at address         36 is read
+# @                5700: REG_FILE::READ: registers  1 =         28, 11 =         21 are read
+# @                5700: REG_FILE::READ: registers 10 =         54, 11 =         21 are read
+# @                5700: ALU::ADD: a =         54, b =       1000
+# @                5700: ALU::ADD: a =         54, b = 4294942762
+# @                5700: ALU_CTRL::RTYPE: func = 42
+# @                5700: ALU::SLT: a =         54, b =         21
+# @                5800: PC is now         40
+# @                5800: REG_FILE::WRITE: value          0 stored in register 20
+# @                5800: INST_MEM: data at address         40 is read
+# @                5800: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                5800: ALU::SLT: a =          0, b =         21
+# @                5800: ALU::SLT: a =          0, b =          0
+# @                5800: ALU_CTRL::BTYPE
+# @                5800: ALU::SUB: a =          0, b =          0
+# @                5900: PC is now         44
+# @                5900: INST_MEM: data at address         44 is read
+# @                5900: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                5900: ALU_CTRL::JTYPE
+# @                6000: PC is now         20
+# @                6000: INST_MEM: data at address         20 is read
+# @                6000: REG_FILE::READ: registers  3 =         76,  1 =         28 are read
+# @                6000: ALU_CTRL::BTYPE
+# @                6000: ALU::SUB: a =         76, b =         28
+# @                6100: PC is now         24
+# @                6100: INST_MEM: data at address         24 is read
+# @                6100: REG_FILE::READ: registers  1 =         28,  1 =         28 are read
+# @                6100: ALU::SUB: a =         28, b =         28
+# @                6100: ALU_CTRL::RTYPE: func = 32
+# @                6100: ALU::ADD: a =         28, b =          4
+# @                6200: PC is now         28
+# @                6200: REG_FILE::WRITE: value         32 stored in register  1
+# @                6200: INST_MEM: data at address         28 is read
+# @                6200: REG_FILE::READ: registers  1 =         32,  1 =         32 are read
+# @                6200: REG_FILE::READ: registers  2 =          7,  2 =          7 are read
+# @                6200: ALU::ADD: a =         32, b =          4
+# @                6200: ALU::ADD: a =          7, b =          4
+# @                6200: ALU::ADD: a =          7, b =          1
+# @                6300: PC is now         32
+# @                6300: REG_FILE::WRITE: value          8 stored in register  2
+# @                6300: INST_MEM: data at address         32 is read
+# @                6300: REG_FILE::READ: registers  2 =          8,  2 =          8 are read
+# @                6300: REG_FILE::READ: registers  1 =         32, 11 =         21 are read
+# @                6300: ALU::ADD: a =          8, b =          1
+# @                6300: ALU::ADD: a =         32, b =          1
+# @                6300: ALU::ADD: a =         32, b =       1000
+# @                6300: ALU_CTRL::MTYPE
+# @                6300: DATA_MEM::READ: value          0 at address    33 is read
+# @                6300: DATA_MEM::READ: value          1 at address  1032 is read
+# @                6400: PC is now         36
+# @                6400: REG_FILE::WRITE: value          1 stored in register 11
+# @                6400: INST_MEM: data at address         36 is read
+# @                6400: REG_FILE::READ: registers  1 =         32, 11 =          1 are read
+# @                6400: REG_FILE::READ: registers 10 =         54, 11 =          1 are read
+# @                6400: ALU::ADD: a =         54, b =       1000
+# @                6400: ALU::ADD: a =         54, b = 4294942762
+# @                6400: ALU_CTRL::RTYPE: func = 42
+# @                6400: ALU::SLT: a =         54, b =          1
+# @                6500: PC is now         40
+# @                6500: REG_FILE::WRITE: value          0 stored in register 20
+# @                6500: INST_MEM: data at address         40 is read
+# @                6500: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                6500: ALU::SLT: a =          0, b =          1
+# @                6500: ALU::SLT: a =          0, b =          0
+# @                6500: ALU_CTRL::BTYPE
+# @                6500: ALU::SUB: a =          0, b =          0
+# @                6600: PC is now         44
+# @                6600: INST_MEM: data at address         44 is read
+# @                6600: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                6600: ALU_CTRL::JTYPE
+# @                6700: PC is now         20
+# @                6700: INST_MEM: data at address         20 is read
+# @                6700: REG_FILE::READ: registers  3 =         76,  1 =         32 are read
+# @                6700: ALU_CTRL::BTYPE
+# @                6700: ALU::SUB: a =         76, b =         32
+# @                6800: PC is now         24
+# @                6800: INST_MEM: data at address         24 is read
+# @                6800: REG_FILE::READ: registers  1 =         32,  1 =         32 are read
+# @                6800: ALU::SUB: a =         32, b =         32
+# @                6800: ALU_CTRL::RTYPE: func = 32
+# @                6800: ALU::ADD: a =         32, b =          4
+# @                6900: PC is now         28
+# @                6900: REG_FILE::WRITE: value         36 stored in register  1
+# @                6900: INST_MEM: data at address         28 is read
+# @                6900: REG_FILE::READ: registers  1 =         36,  1 =         36 are read
+# @                6900: REG_FILE::READ: registers  2 =          8,  2 =          8 are read
+# @                6900: ALU::ADD: a =         36, b =          4
+# @                6900: ALU::ADD: a =          8, b =          4
+# @                6900: ALU::ADD: a =          8, b =          1
+# @                7000: PC is now         32
+# @                7000: REG_FILE::WRITE: value          9 stored in register  2
+# @                7000: INST_MEM: data at address         32 is read
+# @                7000: REG_FILE::READ: registers  2 =          9,  2 =          9 are read
+# @                7000: REG_FILE::READ: registers  1 =         36, 11 =          1 are read
+# @                7000: ALU::ADD: a =          9, b =          1
+# @                7000: ALU::ADD: a =         36, b =          1
+# @                7000: ALU::ADD: a =         36, b =       1000
+# @                7000: ALU_CTRL::MTYPE
+# @                7000: DATA_MEM::READ: value          0 at address    37 is read
+# @                7000: DATA_MEM::READ: value        189 at address  1036 is read
+# @                7100: PC is now         36
+# @                7100: REG_FILE::WRITE: value        189 stored in register 11
+# @                7100: INST_MEM: data at address         36 is read
+# @                7100: REG_FILE::READ: registers  1 =         36, 11 =        189 are read
+# @                7100: REG_FILE::READ: registers 10 =         54, 11 =        189 are read
+# @                7100: ALU::ADD: a =         54, b =       1000
+# @                7100: ALU::ADD: a =         54, b = 4294942762
+# @                7100: ALU_CTRL::RTYPE: func = 42
+# @                7100: ALU::SLT: a =         54, b =        189
+# @                7200: PC is now         40
+# @                7200: REG_FILE::WRITE: value          1 stored in register 20
+# @                7200: INST_MEM: data at address         40 is read
+# @                7200: REG_FILE::READ: registers 20 =          1,  0 =          0 are read
+# @                7200: ALU::SLT: a =          1, b =        189
+# @                7200: ALU::SLT: a =          1, b =          0
+# @                7200: ALU_CTRL::BTYPE
+# @                7200: ALU::SUB: a =          1, b =          0
+# @                7300: PC is now         48
+# @                7300: INST_MEM: data at address         48 is read
+# @                7300: REG_FILE::READ: registers  0 =          0, 11 =        189 are read
+# @                7300: ALU::SUB: a =          0, b =          0
+# @                7300: ALU::SUB: a =          0, b =        189
+# @                7300: ALU_CTRL::RTYPE: func = 32
+# @                7300: ALU::ADD: a =          0, b =        189
+# @                7400: PC is now         52
+# @                7400: REG_FILE::WRITE: value        189 stored in register 10
+# @                7400: INST_MEM: data at address         52 is read
+# @                7400: REG_FILE::READ: registers  0 =          0,  2 =          9 are read
+# @                7400: ALU::ADD: a =          0, b =          9
+# @                7500: PC is now         56
+# @                7500: REG_FILE::WRITE: value          9 stored in register  5
+# @                7500: INST_MEM: data at address         56 is read
+# @                7500: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                7500: ALU::ADD: a =          0, b =          0
+# @                7500: ALU_CTRL::JTYPE
+# @                7600: PC is now         20
+# @                7600: INST_MEM: data at address         20 is read
+# @                7600: REG_FILE::READ: registers  3 =         76,  1 =         36 are read
+# @                7600: ALU_CTRL::BTYPE
+# @                7600: ALU::SUB: a =         76, b =         36
+# @                7700: PC is now         24
+# @                7700: INST_MEM: data at address         24 is read
+# @                7700: REG_FILE::READ: registers  1 =         36,  1 =         36 are read
+# @                7700: ALU::SUB: a =         36, b =         36
+# @                7700: ALU_CTRL::RTYPE: func = 32
+# @                7700: ALU::ADD: a =         36, b =          4
+# @                7800: PC is now         28
+# @                7800: REG_FILE::WRITE: value         40 stored in register  1
+# @                7800: INST_MEM: data at address         28 is read
+# @                7800: REG_FILE::READ: registers  1 =         40,  1 =         40 are read
+# @                7800: REG_FILE::READ: registers  2 =          9,  2 =          9 are read
+# @                7800: ALU::ADD: a =         40, b =          4
+# @                7800: ALU::ADD: a =          9, b =          4
+# @                7800: ALU::ADD: a =          9, b =          1
+# @                7900: PC is now         32
+# @                7900: REG_FILE::WRITE: value         10 stored in register  2
+# @                7900: INST_MEM: data at address         32 is read
+# @                7900: REG_FILE::READ: registers  2 =         10,  2 =         10 are read
+# @                7900: REG_FILE::READ: registers  1 =         40, 11 =        189 are read
+# @                7900: ALU::ADD: a =         10, b =          1
+# @                7900: ALU::ADD: a =         40, b =          1
+# @                7900: ALU::ADD: a =         40, b =       1000
+# @                7900: ALU_CTRL::MTYPE
+# @                7900: DATA_MEM::READ: value          0 at address    41 is read
+# @                7900: DATA_MEM::READ: value          3 at address  1040 is read
+# @                8000: PC is now         36
+# @                8000: REG_FILE::WRITE: value          3 stored in register 11
+# @                8000: INST_MEM: data at address         36 is read
+# @                8000: REG_FILE::READ: registers  1 =         40, 11 =          3 are read
+# @                8000: REG_FILE::READ: registers 10 =        189, 11 =          3 are read
+# @                8000: ALU::ADD: a =        189, b =       1000
+# @                8000: ALU::ADD: a =        189, b = 4294942762
+# @                8000: ALU_CTRL::RTYPE: func = 42
+# @                8000: ALU::SLT: a =        189, b =          3
+# @                8100: PC is now         40
+# @                8100: REG_FILE::WRITE: value          0 stored in register 20
+# @                8100: INST_MEM: data at address         40 is read
+# @                8100: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                8100: ALU::SLT: a =          0, b =          3
+# @                8100: ALU::SLT: a =          0, b =          0
+# @                8100: ALU_CTRL::BTYPE
+# @                8100: ALU::SUB: a =          0, b =          0
+# @                8200: PC is now         44
+# @                8200: INST_MEM: data at address         44 is read
+# @                8200: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                8200: ALU_CTRL::JTYPE
+# @                8300: PC is now         20
+# @                8300: INST_MEM: data at address         20 is read
+# @                8300: REG_FILE::READ: registers  3 =         76,  1 =         40 are read
+# @                8300: ALU_CTRL::BTYPE
+# @                8300: ALU::SUB: a =         76, b =         40
+# @                8400: PC is now         24
+# @                8400: INST_MEM: data at address         24 is read
+# @                8400: REG_FILE::READ: registers  1 =         40,  1 =         40 are read
+# @                8400: ALU::SUB: a =         40, b =         40
+# @                8400: ALU_CTRL::RTYPE: func = 32
+# @                8400: ALU::ADD: a =         40, b =          4
+# @                8500: PC is now         28
+# @                8500: REG_FILE::WRITE: value         44 stored in register  1
+# @                8500: INST_MEM: data at address         28 is read
+# @                8500: REG_FILE::READ: registers  1 =         44,  1 =         44 are read
+# @                8500: REG_FILE::READ: registers  2 =         10,  2 =         10 are read
+# @                8500: ALU::ADD: a =         44, b =          4
+# @                8500: ALU::ADD: a =         10, b =          4
+# @                8500: ALU::ADD: a =         10, b =          1
+# @                8600: PC is now         32
+# @                8600: REG_FILE::WRITE: value         11 stored in register  2
+# @                8600: INST_MEM: data at address         32 is read
+# @                8600: REG_FILE::READ: registers  2 =         11,  2 =         11 are read
+# @                8600: REG_FILE::READ: registers  1 =         44, 11 =          3 are read
+# @                8600: ALU::ADD: a =         11, b =          1
+# @                8600: ALU::ADD: a =         44, b =          1
+# @                8600: ALU::ADD: a =         44, b =       1000
+# @                8600: ALU_CTRL::MTYPE
+# @                8600: DATA_MEM::READ: value          0 at address    45 is read
+# @                8600: DATA_MEM::READ: value         10 at address  1044 is read
+# @                8700: PC is now         36
+# @                8700: REG_FILE::WRITE: value         10 stored in register 11
+# @                8700: INST_MEM: data at address         36 is read
+# @                8700: REG_FILE::READ: registers  1 =         44, 11 =         10 are read
+# @                8700: REG_FILE::READ: registers 10 =        189, 11 =         10 are read
+# @                8700: ALU::ADD: a =        189, b =       1000
+# @                8700: ALU::ADD: a =        189, b = 4294942762
+# @                8700: ALU_CTRL::RTYPE: func = 42
+# @                8700: ALU::SLT: a =        189, b =         10
+# @                8800: PC is now         40
+# @                8800: REG_FILE::WRITE: value          0 stored in register 20
+# @                8800: INST_MEM: data at address         40 is read
+# @                8800: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                8800: ALU::SLT: a =          0, b =         10
+# @                8800: ALU::SLT: a =          0, b =          0
+# @                8800: ALU_CTRL::BTYPE
+# @                8800: ALU::SUB: a =          0, b =          0
+# @                8900: PC is now         44
+# @                8900: INST_MEM: data at address         44 is read
+# @                8900: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                8900: ALU_CTRL::JTYPE
+# @                9000: PC is now         20
+# @                9000: INST_MEM: data at address         20 is read
+# @                9000: REG_FILE::READ: registers  3 =         76,  1 =         44 are read
+# @                9000: ALU_CTRL::BTYPE
+# @                9000: ALU::SUB: a =         76, b =         44
+# @                9100: PC is now         24
+# @                9100: INST_MEM: data at address         24 is read
+# @                9100: REG_FILE::READ: registers  1 =         44,  1 =         44 are read
+# @                9100: ALU::SUB: a =         44, b =         44
+# @                9100: ALU_CTRL::RTYPE: func = 32
+# @                9100: ALU::ADD: a =         44, b =          4
+# @                9200: PC is now         28
+# @                9200: REG_FILE::WRITE: value         48 stored in register  1
+# @                9200: INST_MEM: data at address         28 is read
+# @                9200: REG_FILE::READ: registers  1 =         48,  1 =         48 are read
+# @                9200: REG_FILE::READ: registers  2 =         11,  2 =         11 are read
+# @                9200: ALU::ADD: a =         48, b =          4
+# @                9200: ALU::ADD: a =         11, b =          4
+# @                9200: ALU::ADD: a =         11, b =          1
+# @                9300: PC is now         32
+# @                9300: REG_FILE::WRITE: value         12 stored in register  2
+# @                9300: INST_MEM: data at address         32 is read
+# @                9300: REG_FILE::READ: registers  2 =         12,  2 =         12 are read
+# @                9300: REG_FILE::READ: registers  1 =         48, 11 =         10 are read
+# @                9300: ALU::ADD: a =         12, b =          1
+# @                9300: ALU::ADD: a =         48, b =          1
+# @                9300: ALU::ADD: a =         48, b =       1000
+# @                9300: ALU_CTRL::MTYPE
+# @                9300: DATA_MEM::READ: value          0 at address    49 is read
+# @                9300: DATA_MEM::READ: value          5 at address  1048 is read
+# @                9400: PC is now         36
+# @                9400: REG_FILE::WRITE: value          5 stored in register 11
+# @                9400: INST_MEM: data at address         36 is read
+# @                9400: REG_FILE::READ: registers  1 =         48, 11 =          5 are read
+# @                9400: REG_FILE::READ: registers 10 =        189, 11 =          5 are read
+# @                9400: ALU::ADD: a =        189, b =       1000
+# @                9400: ALU::ADD: a =        189, b = 4294942762
+# @                9400: ALU_CTRL::RTYPE: func = 42
+# @                9400: ALU::SLT: a =        189, b =          5
+# @                9500: PC is now         40
+# @                9500: REG_FILE::WRITE: value          0 stored in register 20
+# @                9500: INST_MEM: data at address         40 is read
+# @                9500: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @                9500: ALU::SLT: a =          0, b =          5
+# @                9500: ALU::SLT: a =          0, b =          0
+# @                9500: ALU_CTRL::BTYPE
+# @                9500: ALU::SUB: a =          0, b =          0
+# @                9600: PC is now         44
+# @                9600: INST_MEM: data at address         44 is read
+# @                9600: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @                9600: ALU_CTRL::JTYPE
+# @                9700: PC is now         20
+# @                9700: INST_MEM: data at address         20 is read
+# @                9700: REG_FILE::READ: registers  3 =         76,  1 =         48 are read
+# @                9700: ALU_CTRL::BTYPE
+# @                9700: ALU::SUB: a =         76, b =         48
+# @                9800: PC is now         24
+# @                9800: INST_MEM: data at address         24 is read
+# @                9800: REG_FILE::READ: registers  1 =         48,  1 =         48 are read
+# @                9800: ALU::SUB: a =         48, b =         48
+# @                9800: ALU_CTRL::RTYPE: func = 32
+# @                9800: ALU::ADD: a =         48, b =          4
+# @                9900: PC is now         28
+# @                9900: REG_FILE::WRITE: value         52 stored in register  1
+# @                9900: INST_MEM: data at address         28 is read
+# @                9900: REG_FILE::READ: registers  1 =         52,  1 =         52 are read
+# @                9900: REG_FILE::READ: registers  2 =         12,  2 =         12 are read
+# @                9900: ALU::ADD: a =         52, b =          4
+# @                9900: ALU::ADD: a =         12, b =          4
+# @                9900: ALU::ADD: a =         12, b =          1
+# @               10000: PC is now         32
+# @               10000: REG_FILE::WRITE: value         13 stored in register  2
+# @               10000: INST_MEM: data at address         32 is read
+# @               10000: REG_FILE::READ: registers  2 =         13,  2 =         13 are read
+# @               10000: REG_FILE::READ: registers  1 =         52, 11 =          5 are read
+# @               10000: ALU::ADD: a =         13, b =          1
+# @               10000: ALU::ADD: a =         52, b =          1
+# @               10000: ALU::ADD: a =         52, b =       1000
+# @               10000: ALU_CTRL::MTYPE
+# @               10000: DATA_MEM::READ: value          0 at address    53 is read
+# @               10000: DATA_MEM::READ: value         74 at address  1052 is read
+# @               10100: PC is now         36
+# @               10100: REG_FILE::WRITE: value         74 stored in register 11
+# @               10100: INST_MEM: data at address         36 is read
+# @               10100: REG_FILE::READ: registers  1 =         52, 11 =         74 are read
+# @               10100: REG_FILE::READ: registers 10 =        189, 11 =         74 are read
+# @               10100: ALU::ADD: a =        189, b =       1000
+# @               10100: ALU::ADD: a =        189, b = 4294942762
+# @               10100: ALU_CTRL::RTYPE: func = 42
+# @               10100: ALU::SLT: a =        189, b =         74
+# @               10200: PC is now         40
+# @               10200: REG_FILE::WRITE: value          0 stored in register 20
+# @               10200: INST_MEM: data at address         40 is read
+# @               10200: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               10200: ALU::SLT: a =          0, b =         74
+# @               10200: ALU::SLT: a =          0, b =          0
+# @               10200: ALU_CTRL::BTYPE
+# @               10200: ALU::SUB: a =          0, b =          0
+# @               10300: PC is now         44
+# @               10300: INST_MEM: data at address         44 is read
+# @               10300: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               10300: ALU_CTRL::JTYPE
+# @               10400: PC is now         20
+# @               10400: INST_MEM: data at address         20 is read
+# @               10400: REG_FILE::READ: registers  3 =         76,  1 =         52 are read
+# @               10400: ALU_CTRL::BTYPE
+# @               10400: ALU::SUB: a =         76, b =         52
+# @               10500: PC is now         24
+# @               10500: INST_MEM: data at address         24 is read
+# @               10500: REG_FILE::READ: registers  1 =         52,  1 =         52 are read
+# @               10500: ALU::SUB: a =         52, b =         52
+# @               10500: ALU_CTRL::RTYPE: func = 32
+# @               10500: ALU::ADD: a =         52, b =          4
+# @               10600: PC is now         28
+# @               10600: REG_FILE::WRITE: value         56 stored in register  1
+# @               10600: INST_MEM: data at address         28 is read
+# @               10600: REG_FILE::READ: registers  1 =         56,  1 =         56 are read
+# @               10600: REG_FILE::READ: registers  2 =         13,  2 =         13 are read
+# @               10600: ALU::ADD: a =         56, b =          4
+# @               10600: ALU::ADD: a =         13, b =          4
+# @               10600: ALU::ADD: a =         13, b =          1
+# @               10700: PC is now         32
+# @               10700: REG_FILE::WRITE: value         14 stored in register  2
+# @               10700: INST_MEM: data at address         32 is read
+# @               10700: REG_FILE::READ: registers  2 =         14,  2 =         14 are read
+# @               10700: REG_FILE::READ: registers  1 =         56, 11 =         74 are read
+# @               10700: ALU::ADD: a =         14, b =          1
+# @               10700: ALU::ADD: a =         56, b =          1
+# @               10700: ALU::ADD: a =         56, b =       1000
+# @               10700: ALU_CTRL::MTYPE
+# @               10700: DATA_MEM::READ: value          0 at address    57 is read
+# @               10700: DATA_MEM::READ: value         90 at address  1056 is read
+# @               10800: PC is now         36
+# @               10800: REG_FILE::WRITE: value         90 stored in register 11
+# @               10800: INST_MEM: data at address         36 is read
+# @               10800: REG_FILE::READ: registers  1 =         56, 11 =         90 are read
+# @               10800: REG_FILE::READ: registers 10 =        189, 11 =         90 are read
+# @               10800: ALU::ADD: a =        189, b =       1000
+# @               10800: ALU::ADD: a =        189, b = 4294942762
+# @               10800: ALU_CTRL::RTYPE: func = 42
+# @               10800: ALU::SLT: a =        189, b =         90
+# @               10900: PC is now         40
+# @               10900: REG_FILE::WRITE: value          0 stored in register 20
+# @               10900: INST_MEM: data at address         40 is read
+# @               10900: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               10900: ALU::SLT: a =          0, b =         90
+# @               10900: ALU::SLT: a =          0, b =          0
+# @               10900: ALU_CTRL::BTYPE
+# @               10900: ALU::SUB: a =          0, b =          0
+# @               11000: PC is now         44
+# @               11000: INST_MEM: data at address         44 is read
+# @               11000: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               11000: ALU_CTRL::JTYPE
+# @               11100: PC is now         20
+# @               11100: INST_MEM: data at address         20 is read
+# @               11100: REG_FILE::READ: registers  3 =         76,  1 =         56 are read
+# @               11100: ALU_CTRL::BTYPE
+# @               11100: ALU::SUB: a =         76, b =         56
+# @               11200: PC is now         24
+# @               11200: INST_MEM: data at address         24 is read
+# @               11200: REG_FILE::READ: registers  1 =         56,  1 =         56 are read
+# @               11200: ALU::SUB: a =         56, b =         56
+# @               11200: ALU_CTRL::RTYPE: func = 32
+# @               11200: ALU::ADD: a =         56, b =          4
+# @               11300: PC is now         28
+# @               11300: REG_FILE::WRITE: value         60 stored in register  1
+# @               11300: INST_MEM: data at address         28 is read
+# @               11300: REG_FILE::READ: registers  1 =         60,  1 =         60 are read
+# @               11300: REG_FILE::READ: registers  2 =         14,  2 =         14 are read
+# @               11300: ALU::ADD: a =         60, b =          4
+# @               11300: ALU::ADD: a =         14, b =          4
+# @               11300: ALU::ADD: a =         14, b =          1
+# @               11400: PC is now         32
+# @               11400: REG_FILE::WRITE: value         15 stored in register  2
+# @               11400: INST_MEM: data at address         32 is read
+# @               11400: REG_FILE::READ: registers  2 =         15,  2 =         15 are read
+# @               11400: REG_FILE::READ: registers  1 =         60, 11 =         90 are read
+# @               11400: ALU::ADD: a =         15, b =          1
+# @               11400: ALU::ADD: a =         60, b =          1
+# @               11400: ALU::ADD: a =         60, b =       1000
+# @               11400: ALU_CTRL::MTYPE
+# @               11400: DATA_MEM::READ: value          0 at address    61 is read
+# @               11400: DATA_MEM::READ: value        512 at address  1060 is read
+# @               11500: PC is now         36
+# @               11500: REG_FILE::WRITE: value        512 stored in register 11
+# @               11500: INST_MEM: data at address         36 is read
+# @               11500: REG_FILE::READ: registers  1 =         60, 11 =        512 are read
+# @               11500: REG_FILE::READ: registers 10 =        189, 11 =        512 are read
+# @               11500: ALU::ADD: a =        189, b =       1000
+# @               11500: ALU::ADD: a =        189, b = 4294942762
+# @               11500: ALU_CTRL::RTYPE: func = 42
+# @               11500: ALU::SLT: a =        189, b =        512
+# @               11600: PC is now         40
+# @               11600: REG_FILE::WRITE: value          1 stored in register 20
+# @               11600: INST_MEM: data at address         40 is read
+# @               11600: REG_FILE::READ: registers 20 =          1,  0 =          0 are read
+# @               11600: ALU::SLT: a =          1, b =        512
+# @               11600: ALU::SLT: a =          1, b =          0
+# @               11600: ALU_CTRL::BTYPE
+# @               11600: ALU::SUB: a =          1, b =          0
+# @               11700: PC is now         48
+# @               11700: INST_MEM: data at address         48 is read
+# @               11700: REG_FILE::READ: registers  0 =          0, 11 =        512 are read
+# @               11700: ALU::SUB: a =          0, b =          0
+# @               11700: ALU::SUB: a =          0, b =        512
+# @               11700: ALU_CTRL::RTYPE: func = 32
+# @               11700: ALU::ADD: a =          0, b =        512
+# @               11800: PC is now         52
+# @               11800: REG_FILE::WRITE: value        512 stored in register 10
+# @               11800: INST_MEM: data at address         52 is read
+# @               11800: REG_FILE::READ: registers  0 =          0,  2 =         15 are read
+# @               11800: ALU::ADD: a =          0, b =         15
+# @               11900: PC is now         56
+# @               11900: REG_FILE::WRITE: value         15 stored in register  5
+# @               11900: INST_MEM: data at address         56 is read
+# @               11900: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               11900: ALU::ADD: a =          0, b =          0
+# @               11900: ALU_CTRL::JTYPE
+# @               12000: PC is now         20
+# @               12000: INST_MEM: data at address         20 is read
+# @               12000: REG_FILE::READ: registers  3 =         76,  1 =         60 are read
+# @               12000: ALU_CTRL::BTYPE
+# @               12000: ALU::SUB: a =         76, b =         60
+# @               12100: PC is now         24
+# @               12100: INST_MEM: data at address         24 is read
+# @               12100: REG_FILE::READ: registers  1 =         60,  1 =         60 are read
+# @               12100: ALU::SUB: a =         60, b =         60
+# @               12100: ALU_CTRL::RTYPE: func = 32
+# @               12100: ALU::ADD: a =         60, b =          4
+# @               12200: PC is now         28
+# @               12200: REG_FILE::WRITE: value         64 stored in register  1
+# @               12200: INST_MEM: data at address         28 is read
+# @               12200: REG_FILE::READ: registers  1 =         64,  1 =         64 are read
+# @               12200: REG_FILE::READ: registers  2 =         15,  2 =         15 are read
+# @               12200: ALU::ADD: a =         64, b =          4
+# @               12200: ALU::ADD: a =         15, b =          4
+# @               12200: ALU::ADD: a =         15, b =          1
+# @               12300: PC is now         32
+# @               12300: REG_FILE::WRITE: value         16 stored in register  2
+# @               12300: INST_MEM: data at address         32 is read
+# @               12300: REG_FILE::READ: registers  2 =         16,  2 =         16 are read
+# @               12300: REG_FILE::READ: registers  1 =         64, 11 =        512 are read
+# @               12300: ALU::ADD: a =         16, b =          1
+# @               12300: ALU::ADD: a =         64, b =          1
+# @               12300: ALU::ADD: a =         64, b =       1000
+# @               12300: ALU_CTRL::MTYPE
+# @               12300: DATA_MEM::READ: value          0 at address    65 is read
+# @               12300: DATA_MEM::READ: value         30 at address  1064 is read
+# @               12400: PC is now         36
+# @               12400: REG_FILE::WRITE: value         30 stored in register 11
+# @               12400: INST_MEM: data at address         36 is read
+# @               12400: REG_FILE::READ: registers  1 =         64, 11 =         30 are read
+# @               12400: REG_FILE::READ: registers 10 =        512, 11 =         30 are read
+# @               12400: ALU::ADD: a =        512, b =       1000
+# @               12400: ALU::ADD: a =        512, b = 4294942762
+# @               12400: ALU_CTRL::RTYPE: func = 42
+# @               12400: ALU::SLT: a =        512, b =         30
+# @               12500: PC is now         40
+# @               12500: REG_FILE::WRITE: value          0 stored in register 20
+# @               12500: INST_MEM: data at address         40 is read
+# @               12500: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               12500: ALU::SLT: a =          0, b =         30
+# @               12500: ALU::SLT: a =          0, b =          0
+# @               12500: ALU_CTRL::BTYPE
+# @               12500: ALU::SUB: a =          0, b =          0
+# @               12600: PC is now         44
+# @               12600: INST_MEM: data at address         44 is read
+# @               12600: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               12600: ALU_CTRL::JTYPE
+# @               12700: PC is now         20
+# @               12700: INST_MEM: data at address         20 is read
+# @               12700: REG_FILE::READ: registers  3 =         76,  1 =         64 are read
+# @               12700: ALU_CTRL::BTYPE
+# @               12700: ALU::SUB: a =         76, b =         64
+# @               12800: PC is now         24
+# @               12800: INST_MEM: data at address         24 is read
+# @               12800: REG_FILE::READ: registers  1 =         64,  1 =         64 are read
+# @               12800: ALU::SUB: a =         64, b =         64
+# @               12800: ALU_CTRL::RTYPE: func = 32
+# @               12800: ALU::ADD: a =         64, b =          4
+# @               12900: PC is now         28
+# @               12900: REG_FILE::WRITE: value         68 stored in register  1
+# @               12900: INST_MEM: data at address         28 is read
+# @               12900: REG_FILE::READ: registers  1 =         68,  1 =         68 are read
+# @               12900: REG_FILE::READ: registers  2 =         16,  2 =         16 are read
+# @               12900: ALU::ADD: a =         68, b =          4
+# @               12900: ALU::ADD: a =         16, b =          4
+# @               12900: ALU::ADD: a =         16, b =          1
+# @               13000: PC is now         32
+# @               13000: REG_FILE::WRITE: value         17 stored in register  2
+# @               13000: INST_MEM: data at address         32 is read
+# @               13000: REG_FILE::READ: registers  2 =         17,  2 =         17 are read
+# @               13000: REG_FILE::READ: registers  1 =         68, 11 =         30 are read
+# @               13000: ALU::ADD: a =         17, b =          1
+# @               13000: ALU::ADD: a =         68, b =          1
+# @               13000: ALU::ADD: a =         68, b =       1000
+# @               13000: ALU_CTRL::MTYPE
+# @               13000: DATA_MEM::READ: value          0 at address    69 is read
+# @               13000: DATA_MEM::READ: value         67 at address  1068 is read
+# @               13100: PC is now         36
+# @               13100: REG_FILE::WRITE: value         67 stored in register 11
+# @               13100: INST_MEM: data at address         36 is read
+# @               13100: REG_FILE::READ: registers  1 =         68, 11 =         67 are read
+# @               13100: REG_FILE::READ: registers 10 =        512, 11 =         67 are read
+# @               13100: ALU::ADD: a =        512, b =       1000
+# @               13100: ALU::ADD: a =        512, b = 4294942762
+# @               13100: ALU_CTRL::RTYPE: func = 42
+# @               13100: ALU::SLT: a =        512, b =         67
+# @               13200: PC is now         40
+# @               13200: REG_FILE::WRITE: value          0 stored in register 20
+# @               13200: INST_MEM: data at address         40 is read
+# @               13200: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               13200: ALU::SLT: a =          0, b =         67
+# @               13200: ALU::SLT: a =          0, b =          0
+# @               13200: ALU_CTRL::BTYPE
+# @               13200: ALU::SUB: a =          0, b =          0
+# @               13300: PC is now         44
+# @               13300: INST_MEM: data at address         44 is read
+# @               13300: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               13300: ALU_CTRL::JTYPE
+# @               13400: PC is now         20
+# @               13400: INST_MEM: data at address         20 is read
+# @               13400: REG_FILE::READ: registers  3 =         76,  1 =         68 are read
+# @               13400: ALU_CTRL::BTYPE
+# @               13400: ALU::SUB: a =         76, b =         68
+# @               13500: PC is now         24
+# @               13500: INST_MEM: data at address         24 is read
+# @               13500: REG_FILE::READ: registers  1 =         68,  1 =         68 are read
+# @               13500: ALU::SUB: a =         68, b =         68
+# @               13500: ALU_CTRL::RTYPE: func = 32
+# @               13500: ALU::ADD: a =         68, b =          4
+# @               13600: PC is now         28
+# @               13600: REG_FILE::WRITE: value         72 stored in register  1
+# @               13600: INST_MEM: data at address         28 is read
+# @               13600: REG_FILE::READ: registers  1 =         72,  1 =         72 are read
+# @               13600: REG_FILE::READ: registers  2 =         17,  2 =         17 are read
+# @               13600: ALU::ADD: a =         72, b =          4
+# @               13600: ALU::ADD: a =         17, b =          4
+# @               13600: ALU::ADD: a =         17, b =          1
+# @               13700: PC is now         32
+# @               13700: REG_FILE::WRITE: value         18 stored in register  2
+# @               13700: INST_MEM: data at address         32 is read
+# @               13700: REG_FILE::READ: registers  2 =         18,  2 =         18 are read
+# @               13700: REG_FILE::READ: registers  1 =         72, 11 =         67 are read
+# @               13700: ALU::ADD: a =         18, b =          1
+# @               13700: ALU::ADD: a =         72, b =          1
+# @               13700: ALU::ADD: a =         72, b =       1000
+# @               13700: ALU_CTRL::MTYPE
+# @               13700: DATA_MEM::READ: value          0 at address    73 is read
+# @               13700: DATA_MEM::READ: value         57 at address  1072 is read
+# @               13800: PC is now         36
+# @               13800: REG_FILE::WRITE: value         57 stored in register 11
+# @               13800: INST_MEM: data at address         36 is read
+# @               13800: REG_FILE::READ: registers  1 =         72, 11 =         57 are read
+# @               13800: REG_FILE::READ: registers 10 =        512, 11 =         57 are read
+# @               13800: ALU::ADD: a =        512, b =       1000
+# @               13800: ALU::ADD: a =        512, b = 4294942762
+# @               13800: ALU_CTRL::RTYPE: func = 42
+# @               13800: ALU::SLT: a =        512, b =         57
+# @               13900: PC is now         40
+# @               13900: REG_FILE::WRITE: value          0 stored in register 20
+# @               13900: INST_MEM: data at address         40 is read
+# @               13900: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               13900: ALU::SLT: a =          0, b =         57
+# @               13900: ALU::SLT: a =          0, b =          0
+# @               13900: ALU_CTRL::BTYPE
+# @               13900: ALU::SUB: a =          0, b =          0
+# @               14000: PC is now         44
+# @               14000: INST_MEM: data at address         44 is read
+# @               14000: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               14000: ALU_CTRL::JTYPE
+# @               14100: PC is now         20
+# @               14100: INST_MEM: data at address         20 is read
+# @               14100: REG_FILE::READ: registers  3 =         76,  1 =         72 are read
+# @               14100: ALU_CTRL::BTYPE
+# @               14100: ALU::SUB: a =         76, b =         72
+# @               14200: PC is now         24
+# @               14200: INST_MEM: data at address         24 is read
+# @               14200: REG_FILE::READ: registers  1 =         72,  1 =         72 are read
+# @               14200: ALU::SUB: a =         72, b =         72
+# @               14200: ALU_CTRL::RTYPE: func = 32
+# @               14200: ALU::ADD: a =         72, b =          4
+# @               14300: PC is now         28
+# @               14300: REG_FILE::WRITE: value         76 stored in register  1
+# @               14300: INST_MEM: data at address         28 is read
+# @               14300: REG_FILE::READ: registers  1 =         76,  1 =         76 are read
+# @               14300: REG_FILE::READ: registers  2 =         18,  2 =         18 are read
+# @               14300: ALU::ADD: a =         76, b =          4
+# @               14300: ALU::ADD: a =         18, b =          4
+# @               14300: ALU::ADD: a =         18, b =          1
+# @               14400: PC is now         32
+# @               14400: REG_FILE::WRITE: value         19 stored in register  2
+# @               14400: INST_MEM: data at address         32 is read
+# @               14400: REG_FILE::READ: registers  2 =         19,  2 =         19 are read
+# @               14400: REG_FILE::READ: registers  1 =         76, 11 =         57 are read
+# @               14400: ALU::ADD: a =         19, b =          1
+# @               14400: ALU::ADD: a =         76, b =          1
+# @               14400: ALU::ADD: a =         76, b =       1000
+# @               14400: ALU_CTRL::MTYPE
+# @               14400: DATA_MEM::READ: value          0 at address    77 is read
+# @               14400: DATA_MEM::READ: value        100 at address  1076 is read
+# @               14500: PC is now         36
+# @               14500: REG_FILE::WRITE: value        100 stored in register 11
+# @               14500: INST_MEM: data at address         36 is read
+# @               14500: REG_FILE::READ: registers  1 =         76, 11 =        100 are read
+# @               14500: REG_FILE::READ: registers 10 =        512, 11 =        100 are read
+# @               14500: ALU::ADD: a =        512, b =       1000
+# @               14500: ALU::ADD: a =        512, b = 4294942762
+# @               14500: ALU_CTRL::RTYPE: func = 42
+# @               14500: ALU::SLT: a =        512, b =        100
+# @               14600: PC is now         40
+# @               14600: REG_FILE::WRITE: value          0 stored in register 20
+# @               14600: INST_MEM: data at address         40 is read
+# @               14600: REG_FILE::READ: registers 20 =          0,  0 =          0 are read
+# @               14600: ALU::SLT: a =          0, b =        100
+# @               14600: ALU::SLT: a =          0, b =          0
+# @               14600: ALU_CTRL::BTYPE
+# @               14600: ALU::SUB: a =          0, b =          0
+# @               14700: PC is now         44
+# @               14700: INST_MEM: data at address         44 is read
+# @               14700: REG_FILE::READ: registers  0 =          0,  0 =          0 are read
+# @               14700: ALU_CTRL::JTYPE
+# @               14800: PC is now         20
+# @               14800: INST_MEM: data at address         20 is read
+# @               14800: REG_FILE::READ: registers  3 =         76,  1 =         76 are read
+# @               14800: ALU_CTRL::BTYPE
+# @               14800: ALU::SUB: a =         76, b =         76
+# @               14900: PC is now         60
+# @               14900: INST_MEM: data at address         60 is read
+# @               14900: REG_FILE::READ: registers  0 =          0, 10 =        512 are read
+# @               14900: ALU::SUB: a =          0, b =         76
+# @               14900: ALU::SUB: a =          0, b =        512
+# @               14900: ALU_CTRL::MTYPE
+# @               14900: ALU::ADD: a =          0, b =       2000
+# @               15000: PC is now         64
+# @               15000: DATA_MEM::WRITE: value        512 stored at address  2000
+# @               15000: INST_MEM: data at address         64 is read
+# @               15000: REG_FILE::READ: registers  0 =          0,  5 =         15 are read
+# @               15000: ALU::ADD: a =          0, b =       2004
+# @               15000: ALU_CTRL::MTYPE
+# @               15100: PC is now         68
+# @               15100: DATA_MEM::WRITE: value         15 stored at address  2004
+# @               15100: INST_MEM: data at address         68 is read
+# @               15100: REG_FILE::READ: registers  x =          x,  x =          x are read
+# @               15100: ALU::ADD: a =          x, b =       2004
+# @               15100: ALU::ADD: a =          x, b =          x
