@@ -19,7 +19,7 @@ module processor_test();
     processor mips(clk, rst);
 
     initial begin
-        #100 clk = 1'b1;
+        clk = 1'b1;
         repeat(1000) #50 clk = ~clk;
     end
 
